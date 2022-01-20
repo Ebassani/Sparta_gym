@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@300&display=swap');
+
+body
+{
+    max-width: 1440px;
+}
+
+.middle_part
+{
+    background-image: url("Background_middle_part.jpg");
+    font-family: 'Spartan', sans-serif;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+.Cardio
+{
+    background-color: rgba(196, 196, 196, 0.7);
+    margin: 70px 30px 40px 30px;
+    display: flex;
+    flex-direction: row;
+}
+.img_cardio
+{
+    object-fit: cover;
+    width: 45vw;
+    max-width: 770px;
+    max-height: 300px;
+    margin: 50px 20px 50px 20px;
+    border-radius: 20%;
+}
+
+.Stretching
+{
+    background-color: rgba(196, 196, 196, 0.7);
+    margin: 70px 30px 40px 30px;
+    display: flex;
+    flex-direction: row;
+}
+.img_Stretch
+{
+    object-fit: cover;
+    width: 45vw;
+    max-width: 770px;
+    max-height: 300px;
+    margin: 50px 20px 50px 20px;
+    border-radius: 20%;
+}
+
+.Weights
+{
+    background-color: rgba(196, 196, 196, 0.7);
+    margin: 70px 30px 40px 30px;
+    display: flex;
+    flex-direction: row;
+}
+.img_weight
+{
+    object-fit: cover;
+    width: 45vw;
+    max-width: 770px;
+    max-height: 300px;
+    margin: 50px 20px 50px 20px;
+    border-radius: 20%;
+}
+
+.Text1
+{
+    margin-top: 100px;
+    text-align: center;
+    
+    font-size: 64px;
+    display: flex;
+    justify-content: center;
+    color: snow;
+}
+
+.cardioText
+{
+    margin: 40px 20px 20px 20px;
+}
+
+.weightText
+{
+    margin: 40px 20px 20px 20px;
+}
+
+.stretchText
+{
+    margin: 40px 20px 20px 20px;
+}
