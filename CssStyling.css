@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan&display=swap');
+
+body
+{
+    max-width: 2000px;
+    margin-right: auto;
+    margin-left: auto;
+    min-width: 850px;
+}
+
+.middle_part
+{
+    background-image: url("Background_middle_part.jpg");
+    font-family: 'Spartan', sans-serif;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+.cardio
+{
+    background-color: rgba(196, 196, 196, 0.7);
+    margin: 70px 30px 40px 30px;
+    display: flex;
+    flex-direction: row;
+}
+.img_cardio
+{
+    object-fit: cover;
+    width: 45vw;
+    max-width: 770px;
+    max-height: 300px;
+    margin: 50px 20px 50px 20px;
+    border-radius: 300px;
+}
+
+.stretching
+{
+    background-color: rgba(196, 196, 196, 0.7);
+    margin: 70px 30px 40px 30px;
+    display: flex;
+    flex-direction: row;
+}
+.img_Stretch
+{
+    object-fit: cover;
+    width: 45vw;
+    max-width: 770px;
+    max-height: 300px;
+    margin: 50px 20px 50px 20px;
+    border-radius: 300px;
+}
+
+.weights
+{
+    background-color: rgba(196, 196, 196, 0.7);
+    margin: 70px 30px 40px 30px;
+    display: flex;
+    flex-direction: row;
+}
+.img_weight
+{
+    object-fit: cover;
+    width: 45vw;
+    max-width: 770px;
+    max-height: 300px;
+    margin: 50px 20px 50px 20px;
+    border-radius: 300px;
+}
+
+.text1
+{
+    margin-top: 100px;
+    text-align: center;
+    
+    font-size: 64px;
+    justify-content: center;
+    color: snow;
+}
+
+.text2
+{
+    text-align: center;
+    color: snow;
+}
+
+.cardioText
+{
+    margin: 70px 20px 20px 20px;
+}
+
+.weightText
+{
+    margin: 70px 20px 20px 20px;
+}
+
+.stretchText
+{
+    margin: 70px 20px 20px 20px;
+}
+
+.advertisement
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.advertisement2
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.smallImage1
+{
+    margin-top: 250px;
+    margin-left: 50px;
+    object-fit: cover;
+    width: 200px;
+    height: 300px;
+    border-radius: 200px;
+}
+
+.smallImage2
+{
+    margin-top: 250px;
+    margin-right: 50px;
+    object-fit: cover;
+    width: 200px;
+    height: 300px;
+    border-radius: 200px;
+}
+
+.smallImage3
+{
+    object-fit: cover;
+    width: 300px;
+    height: 300px;
+    border-radius: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contactInfo
+{
+    background-color: #1F4161;
+    color: snow;
+}
+
+.icons
+{
+    display: flex;
+    flex-direction: row;
+    object-fit: cover;
+    height: 10em;
+    width: 10em;
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.textInfo
+{
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+}
+
+.textWithInfo
+{
+    padding-left: 2em;
+    padding-right: 16em;
+}
+
+.info
+{
+    padding-top: 3em;
+    padding-bottom: 1em;
+    display: flex;
+    flex-direction: row;
+}
+
+.instagramImg
+{
+    width: 6em;
+    height: 6em;
+    object-fit: cover;
+    max-width: 100px;
+    max-height: 100px;
+}
+.instagram
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.facebookImg
+{
+    width: 6em;
+    height: 6em;
+    object-fit: cover;
+    max-width: 100px;
+    max-height: 100px;
+}
+.facebook
+{
+    display: flex;
+    flex-direction: row;
+}
+
+a
+{
+    color: snow;
+    text-decoration: none;
+}
+a:hover
+{
+    color: snow;
+}
