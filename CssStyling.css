@@ -10,12 +10,11 @@ body
 
 .middle_part
 {
-    background-image: url("Background_middle_part.jpg");
+    background: url("Background_middle_part.jpg");
     font-family: 'Spartan', sans-serif;
-    background-position: center;
+    background-position: center right;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100%;
 }
 
 .cardio
@@ -194,6 +193,7 @@ body
 {
     display: flex;
     flex-direction: row;
+    padding-bottom: 1em;
 }
 
 .facebookImg
