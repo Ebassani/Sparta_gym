@@ -4,46 +4,47 @@ padding: 0;
 box-sizing: border-box;
 }
 body{
-    font-family: 'Spartan', sans-serif; ;
+    font-family: 'Spartan', sans-serif; 
+    
 }
 header{
-    display: flex;
+    display: grid;
     height: 8vh;  
+    color: black;
     background: #1F4161;
-    color: white;
-   
+    width: 100%;
+   grid-template-rows: 0,5 fr;
 }
-.logo-container,.buttons{
+.nav-bar,.buttons{
     display: flex;
-    
 }
 .title{
     font-weight: bold;
-    font-size: 15px;
+    font-size: 22px;
     margin-top: 15px;
     margin: 12px;
    
 }
 .logo{
-    height: 25px;
-    width: 25px;
+    height: 30px;
+    width: 30px;
     margin-top: 6px;
 }
 .buttons{ 
-    list-style: none;
-       
+    margin: 30px;
+    margin-top: 20px;
+    font-size: 12px;
+    flex: auto;
+     
+}
+.button1{
+    margin: 10px;
 }
 
-.logo-container{
-    flex: 5;
+.nav-bar{  
     height: 40px;
 }
-nav{
-  flex: 2;
-  margin-top: 15px;
-  font-size: 10px;
-  
-}
+
 .introimage{
     width: 100%;
 }
