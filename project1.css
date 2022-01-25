@@ -3,47 +3,28 @@ margin: 0;
 padding: 0;
 box-sizing: border-box;
 }
-body{
-    font-family: 'Spartan', sans-serif; 
-    
-}
+
 header{
-    display: grid;
-    height: 8vh;  
-    color: black;
+    display: flex;
+    height: 5em;  
+    color: snow;
     background: #1F4161;
     width: 100%;
-   grid-template-rows: 0,5 fr;
-}
-.nav-bar,.buttons{
-    display: flex;
-}
-.title{
-    font-weight: bold;
-    font-size: 22px;
-    margin-top: 15px;
-    margin: 12px;
-   
-}
-.logo{
-    height: 30px;
-    width: 30px;
-    margin-top: 6px;
-}
-.buttons{ 
-    margin: 30px;
-    margin-top: 20px;
-    font-size: 12px;
-    flex: auto;
-     
-}
-.button1{
-    margin: 10px;
+    flex-direction: row;
 }
 
-.nav-bar{  
-    height: 40px;
+.title{
+    font-weight: bold;
+    margin-top: 0.55em;
+    margin-left: 0.5em;
 }
+.logo{
+    height: 4em;
+    width: 4em;
+    margin-top: 6px;
+    margin-left: 0.5em;
+}
+
 
 .introimage{
     width: 100%;
