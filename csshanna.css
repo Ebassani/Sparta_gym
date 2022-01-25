@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan&display=swap');
+
+.openinginfo
+{
+    background-color: #1F4161;
+    color: snow;
+}
+
+.openinfo
+{
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+}
+
+.textWithopen
+{
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+}
+
+.openimg
+{
+    margin-top: 250px;
+    margin-right: 50px;
+    object-fit: cover;
+    width: 200px;
+    height: 300px;
+    border-radius: 200px;
+}
+
+.after_middle
+{
+    background-image: url("pedro-araujo-PDjYClxmnyk-unsplash.jpg");
+    font-family: 'Spartan', sans-serif;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+.hameenlinna
+{
+    background-color: rgba(196, 196, 196, 0.7);
+    margin: 70px 30px 40px 30px;
+    display: flex;
+    flex-direction: row;
+}
+
+.hmlmap
+{
+    object-fit: cover;
+    width: 45vw;
+    max-width: 770px;
+    max-height: 300px;
+    margin: 50px 20px 50px 20px;
+    border-radius: 300px;
+}
+
+.tre
+{
+    background-color: rgba(196, 196, 196, 0.7);
+    margin: 70px 30px 40px 30px;
+    display: flex;
+    flex-direction: row;
+}
+
+.hamk
+{
+    background-color: rgba(196, 196, 196, 0.7);
+    margin: 70px 30px 40px 30px;
+    display: flex;
+    flex-direction: row;
+}
