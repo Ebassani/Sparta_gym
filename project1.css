@@ -1,35 +1,75 @@
-*{
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-header{
-    display: flex;
-    height: 5em;  
-    color: snow;
-    background: #1F4161;
-    width: 100%;
-    flex-direction: row;
+header {
+  display: flex;
+  height: 5em;
+  color: snow;
+  background: #1f4161;
+  width: 100%;
+  flex-direction: row;
 }
 
-.title{
+.title {
+  font-weight: bold;
+  margin-top: 0.55em;
+  margin-left: 0.5em;
+}
+.logo {
+  height: 4em;
+  width: 4em;
+  margin-top: 6px;
+  margin-left: 0.5em;
+}
+
+.intro-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  color: snow;
+  user-select: none;
+  background: url("bigImage.jpg");
+  background-size: cover;
+  align-items: center;
+  justify-content: space-between;
+  background-repeat: no-repeat;
+}
+.intro {
+  user-select: text;
+  margin-left: 1.5em;
+  font-size: 5em;
+  font-weight: bold;
+
+}
+.intro2 {
+    user-select: text;
+    margin-right: 1em;
+    font-size: 3em;
     font-weight: bold;
-    margin-top: 0.55em;
-    margin-left: 0.5em;
+    margin-top: 2em;
 }
-.logo{
-    height: 4em;
-    width: 4em;
-    margin-top: 6px;
-    margin-left: 0.5em;
+.introduction-container{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    background: #1f4161;
+    height: 55vh;
+    color: snow;
+    font-size: 1.5em;
+    font-weight: lighter;
 }
+.txt1{
+    margin-top: 2em;
+    width:40% ;
+    padding-left: 2em;
 
-
-.introimage{
-    width: 100%;
 }
-@media screen and (min-width:393px) {
-    
+.txt2{
+    margin-top: 5em;
+    width: 40%;
+    padding-right: 2em;
     
 }
