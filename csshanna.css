@@ -1,12 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Spartan&display=swap');
 
-body
-{
-    max-width: 2000px;
-    margin-right: auto;
-    margin-left: auto;
-    min-width: 850px;
-}
 .openinginfo
 {
     background-color: #1F4161;
@@ -29,20 +21,12 @@ body
 
 }
 
-.openimg
-{
-    margin-top: 250px;
-    margin-right: 50x;
-    object-fit: cover;
-    width: 200px;
-    height: 300px;
-    border-radius: 200px;
-}
+
 
 .after_middle
 {
     background-image: url("pedro-araujo-PDjYClxmnyk-unsplash.jpg");
-    font-family: 'Spartan', sans-serif;
+    color: black;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -58,15 +42,7 @@ body
     justify-content: center;
 }
 
-.hmlmap
-{
-    object-fit: cover;
-    width: 45vw;
-    max-width: 770px;
-    max-height: 300px;
-    margin: 50px 20px 50px 20px;
-    border-radius: 300px;
-}
+
 .hmltext
 {
     margin: 50px 20px 20px 20px;
@@ -80,16 +56,7 @@ body
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  
-  .tremap {
-    object-fit: cover;
-    width: 45vw;
-    max-width: 770px;
-    max-height: 300px;
-    margin: 50px 20px 50px 20px;
-    border-radius: 300px;
-  }
+}
 
 
 
@@ -105,18 +72,37 @@ body
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-left: 1em;
+
 }
 .hamktext
 {
     margin: 50px 20px 20px 20px;
 }
 
-.hamkmap.jpg
+.img_hamk
 {
     object-fit: cover;
-    width: 45vw;
-    max-width: 770px;
-    max-height: 300px;
-    margin: 50px 20px 50px 20px;
-    border-radius: 300px;
+    width: 20vw;
+    max-width: 200px;
+    max-height: 200px;
+    padding-right: 2rem;
+}
+
+.img_hml
+{
+    object-fit: cover;
+    width: 20vw;
+    max-width: 200px;
+    max-height: 200px;
+    padding-left: 2rem;
+}
+
+.img_tre
+{
+    object-fit: cover;
+    width: 20vw;
+    max-width: 200px;
+    max-height: 200px;
+    padding-left: 2rem;
 }
