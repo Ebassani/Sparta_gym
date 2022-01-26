@@ -14,7 +14,7 @@
 
 .open
 {
-    text-align: right;
+    text-align: center;
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -52,6 +52,8 @@
 {
     margin-left: 2em;
     margin-right: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 
 .img_hml
@@ -77,6 +79,8 @@
 {
     margin-left: 2em;
     margin-right: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 
 .img_tre
@@ -103,8 +107,10 @@
 
 .hamktext
 {
-    margin-left: 2em;
-    margin-right: 1em;
+    padding-top: 1em;
+    margin-left: 1em;
+    margin-right: 2em;
+    padding-bottom: 1em;
 }
 
 .openimg
@@ -115,17 +121,6 @@
     max-height: 200px;
     padding-right: 2rem;
     padding-bottom: 2em;
-}
-
-.openimgInvisible
-{
-    object-fit: cover;
-    width: 29vw;
-    max-width: 200px;
-    max-height: 200px;
-    padding-right: 2rem;
-    opacity: 0;
-    user-select: none;
 }
 
 .img_hamk
