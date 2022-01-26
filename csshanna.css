@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Spartan&display=swap');
 
+body
+{
+    max-width: 2000px;
+    margin-right: auto;
+    margin-left: auto;
+    min-width: 850px;
+}
 .openinginfo
 {
     background-color: #1F4161;
@@ -25,7 +32,7 @@
 .openimg
 {
     margin-top: 250px;
-    margin-right: 50px;
+    margin-right: 50x;
     object-fit: cover;
     width: 200px;
     height: 300px;
@@ -41,12 +48,14 @@
     background-size: cover;
     height: 100%;
 }
+
 .hameenlinna
 {
     background-color: rgba(196, 196, 196, 0.7);
     margin: 70px 30px 40px 30px;
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 .hmlmap
@@ -58,13 +67,35 @@
     margin: 50px 20px 50px 20px;
     border-radius: 300px;
 }
-
-.tre
+.hmltext
 {
+    margin: 50px 20px 20px 20px;
+}
+
+
+
+.tre {
     background-color: rgba(196, 196, 196, 0.7);
     margin: 70px 30px 40px 30px;
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .tremap {
+    object-fit: cover;
+    width: 45vw;
+    max-width: 770px;
+    max-height: 300px;
+    margin: 50px 20px 50px 20px;
+    border-radius: 300px;
+  }
+
+
+
+.tretext
+{
+    margin: 50px 20px 20px 20px;
 }
 
 .hamk
@@ -72,5 +103,20 @@
     background-color: rgba(196, 196, 196, 0.7);
     margin: 70px 30px 40px 30px;
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.hamktext
+{
+    margin: 50px 20px 20px 20px;
+}
+
+.hamkmap.jpg
+{
+    object-fit: cover;
+    width: 45vw;
+    max-width: 770px;
+    max-height: 300px;
+    margin: 50px 20px 50px 20px;
+    border-radius: 300px;
 }
