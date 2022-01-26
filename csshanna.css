@@ -3,41 +3,28 @@
 {
     background-color: #1F4161;
     color: snow;
-    justify-content: space-between;
-    flex-direction: row;
+    
 }
 
 .openinfo
 {
     text-align: center;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    align-items: right;
-    justify-content: right;
-    justify-content: space-between;
-    flex-direction: row;
+    padding-top: 1em;
 }
 
 .open
 {
     text-align: right;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    align-items: center;
+    display: flex;
     justify-content: center;
-    justify-content: space-between;
     flex-direction: row;
-
 }
 
 .textWithopen
 {   
-    text-align: top;
     text-align: center;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    justify-content: space-between;
-    flex-direction: row;
+    padding-top: 2em;
+    padding-bottom: 2em;
 }
 
 
@@ -120,13 +107,25 @@
     margin-right: 1em;
 }
 
-.img_open
+.openimg
 {
     object-fit: cover;
-    width: 20vw;
+    width: 29vw;
     max-width: 200px;
     max-height: 200px;
     padding-right: 2rem;
+    padding-bottom: 2em;
+}
+
+.openimgInvisible
+{
+    object-fit: cover;
+    width: 29vw;
+    max-width: 200px;
+    max-height: 200px;
+    padding-right: 2rem;
+    opacity: 0;
+    user-select: none;
 }
 
 .img_hamk
@@ -135,7 +134,7 @@
     width: 20vw;
     max-width: 200px;
     max-height: 200px;
-    padding-left: 2rem;
+    padding-right: 2rem;
     padding-top: 2em;
     padding-bottom: 2em;
 }
