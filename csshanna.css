@@ -42,13 +42,22 @@
     justify-content: center;
 }
 
-
 .hmltext
 {
-    margin: 50px 20px 20px 20px;
+    margin-left: 2em;
+    margin-right: 1em;
 }
 
-
+.img_hml
+{
+    object-fit: cover;
+    width: 20vw;
+    max-width: 200px;
+    max-height: 200px;
+    padding-left: 2rem;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
 
 .tre {
     background-color: rgba(196, 196, 196, 0.7);
@@ -58,11 +67,21 @@
     justify-content: center;
 }
 
-
-
 .tretext
 {
-    margin: 50px 20px 20px 20px;
+    margin-left: 2em;
+    margin-right: 1em;
+}
+
+.img_tre
+{
+    object-fit: cover;
+    width: 20vw;
+    max-width: 200px;
+    max-height: 200px;
+    padding-left: 2rem;
+    padding-top: 2em;
+    padding-bottom: 2em;
 }
 
 .hamk
@@ -75,9 +94,11 @@
     padding-left: 1em;
 
 }
+
 .hamktext
 {
-    margin: 50px 20px 20px 20px;
+    margin-left: 2em;
+    margin-right: 1em;
 }
 
 .img_hamk
@@ -86,23 +107,7 @@
     width: 20vw;
     max-width: 200px;
     max-height: 200px;
-    padding-right: 2rem;
-}
-
-.img_hml
-{
-    object-fit: cover;
-    width: 20vw;
-    max-width: 200px;
-    max-height: 200px;
     padding-left: 2rem;
-}
-
-.img_tre
-{
-    object-fit: cover;
-    width: 20vw;
-    max-width: 200px;
-    max-height: 200px;
-    padding-left: 2rem;
+    padding-top: 2em;
+    padding-bottom: 2em;
 }
