@@ -3,6 +3,8 @@
 {
     background-color: #1F4161;
     color: snow;
+    justify-content: space-between;
+    flex-direction: row;
 }
 
 .openinfo
@@ -10,15 +12,32 @@
     text-align: center;
     padding-top: 30px;
     padding-bottom: 30px;
+    align-items: right;
+    justify-content: right;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.open
+{
+    text-align: right;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    flex-direction: row;
 
 }
 
 .textWithopen
-{
+{   
+    text-align: top;
     text-align: center;
     padding-top: 30px;
     padding-bottom: 30px;
-
+    justify-content: space-between;
+    flex-direction: row;
 }
 
 
@@ -78,6 +97,15 @@
 .hamktext
 {
     margin: 50px 20px 20px 20px;
+}
+
+.img_open
+{
+    object-fit: cover;
+    width: 20vw;
+    max-width: 200px;
+    max-height: 200px;
+    padding-right: 2rem;
 }
 
 .img_hamk
