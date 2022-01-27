@@ -2,10 +2,8 @@
 
 body
 {
-    max-width: 2000px;
     margin-right: auto;
     margin-left: auto;
-    min-width: 850px;
     font-family: 'Spartan', sans-serif;
 }
 
@@ -28,16 +26,17 @@ img
 {
     background-color: rgba(196, 196, 196, 0.7);
     margin: 70px 30px 40px 30px;
+    justify-content: center;
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
 }
 .img_cardio
 {
     object-fit: cover;
-    width: 45vw;
-    max-width: 770px;
+    width: 40em;
+    max-width: 80vh;
     max-height: 300px;
-    margin: 50px 20px 50px 20px;
+    margin: 4em 2em 4em 2em;
     border-radius: 300px;
 }
 
@@ -46,15 +45,16 @@ img
     background-color: rgba(196, 196, 196, 0.7);
     margin: 70px 30px 40px 30px;
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .img_Stretch
 {
     object-fit: cover;
-    width: 45vw;
-    max-width: 770px;
+    width: 40em;
+    max-width: 80vh;
     max-height: 300px;
-    margin: 50px 20px 50px 20px;
+    margin: 4em 2em 4em 2em;
     border-radius: 300px;
 }
 
@@ -63,15 +63,16 @@ img
     background-color: rgba(196, 196, 196, 0.7);
     margin: 70px 30px 40px 30px;
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 .img_weight
 {
     object-fit: cover;
-    width: 45vw;
-    max-width: 770px;
+    width: 40em;
+    max-width: 450px;
     max-height: 300px;
-    margin: 50px 20px 50px 20px;
+    margin: 4em 2em 4em 2em;
     border-radius: 300px;
 }
 
@@ -94,22 +95,25 @@ img
 .cardioText
 {
     margin: 70px 20px 20px 20px;
+    max-width: 60vh;
 }
-
 .weightText
 {
     margin: 70px 20px 20px 20px;
+    max-width: 60vh;
 }
+
 
 .stretchText
 {
     margin: 70px 20px 20px 20px;
+    max-width: 60vh;
 }
 
 .advertisement
 {
     display: flex;
-    flex-direction: row;
+    justify-content: center;
 }
 
 .advertisement2
@@ -121,22 +125,22 @@ img
 
 .smallImage1
 {
-    margin-top: 250px;
-    margin-left: 50px;
+    margin-top: 20em;
     object-fit: cover;
-    width: 200px;
-    height: 300px;
+    width: 29vw;
     border-radius: 200px;
+    max-width: 200px;
+    max-height: 200px;
 }
 
 .smallImage2
 {
-    margin-top: 250px;
-    margin-right: 50px;
+    margin-top: 20em;
     object-fit: cover;
-    width: 200px;
-    height: 300px;
+    width: 29vw;
     border-radius: 200px;
+    max-width: 200px;
+    max-height: 200px;
 }
 
 .smallImage3
@@ -189,8 +193,8 @@ img
     padding-top: 1em;
     padding-bottom: 1em;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .instagramImg
@@ -204,7 +208,6 @@ img
 .instagram
 {
     display: flex;
-    flex-direction: row;
     padding-bottom: 1em;
 }
 
@@ -219,7 +222,6 @@ img
 .facebook
 {
     display: flex;
-    flex-direction: row;
 }
 
 a
