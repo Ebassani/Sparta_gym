@@ -15,8 +15,9 @@ header {
 
 .title {
   font-weight: bold;
-  margin-top: 0.7em;
   padding-left: 1em;
+  display: flex;
+  align-items: center;
 }
 .logo {
   height: 4em;
@@ -47,7 +48,6 @@ header {
   font-weight: bold;
 }
 .intro2 {
-    user-select: text;
     font-size: 3em;
     font-weight: bold;
 }
