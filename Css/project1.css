@@ -34,7 +34,7 @@ header {
   max-height: 100rem;
   color: snow;
   user-select: none;
-  background: url("bigImage.jpg");
+  background: url("/images/bigImage.jpg");
   background-size: cover;
   align-items: center;
   justify-content: space-around;

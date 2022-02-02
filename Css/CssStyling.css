@@ -15,7 +15,7 @@ img
 
 .middle_part
 {
-    background: url("Background_middle_part.jpg");
+    background: url("/images/Background_middle_part.jpg");
     font-family: 'Spartan', sans-serif;
     background-position: center right;
     background-repeat: no-repeat;
