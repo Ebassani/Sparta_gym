@@ -11,6 +11,27 @@
     # Step 3: Use fwrite/fread function to write/read on the file your team name and members name. 
     # Step 4: Close the file 
 
+    $filename = 'textFile.txt';
+
+    if (file_exists($filename)) {
+        echo "The file $filename exists";
+    } 
+    else {
+        echo "The file $filename does not exist";
+    }
+    
+    echo "<br>";
+    $file=fopen($filename,"w+") or die("unable to open file");
+        
+    
+    fwrite($file,"Group 8: Eduardo, Hanna, Yasser");
+    
+    fseek($file,0);
+    echo fread($file,filesize($filename));
+    
+    
+    fclose($file);
+
 #2. Uploaing files 
      # Step 1: Create a simple html form to upload a file. 
      # Step 2: You are required to limit the upload file size to 2 MB. 
