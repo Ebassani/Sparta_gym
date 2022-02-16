@@ -9,6 +9,7 @@
     <title>Sparta Gym</title>
     <link rel="stylesheet" href="/Css/project1.css">
     <link rel="stylesheet" href="/Css/csshanna.css">
+    <script src="scripts.js"></script>
 </head>
 
 <body>
@@ -96,10 +97,8 @@
     </div>
 
     <div class="Join us form">
-        <script src="script.js">
-            document.getElementById("button").onclick=newForm("formJoin");
-        </script>
-        <button type="button" id=""button>Click here to be part of our staff</button>
+    
+        <button id="qaz">Click to Join as a staff member</button>
         <form class="formJoin" id="formJoin">
             <label for="fname">First name:</label><br>
             <input type="text" id="fname" name="fname"><br>
@@ -109,8 +108,8 @@
             <input type="text" id="uname" name="uname"><br>
             <label for="passw">Password:</label><br>
             <input type="text" id="passw" name="passw">
-            <label for="cars">Choose a car:</label>
-            <!-- <select id="cars" name="cars">
+            <!-- <label for="cars">Choose a car:</label>
+            <select id="cars" name="cars">
                 <option value="volvo">Volvo</option>
                 <option value="saab">Saab</option>
                 <option value="fiat">Fiat</option>
@@ -189,5 +188,21 @@
             </div>
         </div>
     </div>
+    <script>
+        var switchForm=true;
+        document.getElementById("qaz").onclick = function() {newForm() };
+        function newForm(){
+            if(switchForm){
+                document.getElementById("qaz").innerHTML = "Click to Join as a customer";
+                document.getElementById("formJoin").innerHTML = '<form class="formJoin" id="formJoin"><label for="fname"> name:</label><br><input type="text" id="fname" name="fname"><br><label for="lname">Last name:</label><br><input type="text" id="lname" name="lname"><br><label for="uname">Username:</label><br><input type="text" id="uname" name="uname"><br><label for="passw">Password:</label><br><input type="text" id="passw" name="passw"><input type="submit" value="Submit"></form>';  
+            }
+            else{
+                document.getElementById("qaz").innerHTML = "Click to Join as a staff member";
+                document.getElementById("formJoin").innerHTML = '<form class="formJoin" id="formJoin"><label for="fname">First name:</label><br><input type="text" id="fname" name="fname"><br><label for="lname">Last name:</label><br><input type="text" id="lname" name="lname"><br><label for="uname">Username:</label><br><input type="text" id="uname" name="uname"><br><label for="passw">Password:</label><br><input type="text" id="passw" name="passw"><input type="submit" value="Submit"></form>';  
+            }
+            switchForm = !switchForm;
+        };
+        
+    </script>
 </body>
 </html>
