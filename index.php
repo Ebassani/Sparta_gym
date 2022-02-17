@@ -5,19 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet" href="/Css/CssStyling.css">
+    <link rel="stylesheet" href="Css/CssStyling.css">
     <title>Sparta Gym</title>
-    <link rel="stylesheet" href="/Css/project1.css">
-    <link rel="stylesheet" href="/Css/csshanna.css">
-    <script src="scripts.js"></script>
+    <link rel="stylesheet" href="Css/project1.css">
+    <link rel="stylesheet" href="Css/csshanna.css">
 </head>
 
 <body>
     <header>
         <div class="logo-container">
-          <a href=""><img class="logo" src="/images/spartan.png" alt="logo" ></a>
+          <a href=""><img class="logo" src="images/spartan.png" alt="logo" ></a>
         </div>
         <h2 class="title"><a href="">Sparta Gym</a></h2>
+        <h2 class="title"><a href="login.php">Login</a></h2>
     </header>
     <div class="intro-container">
         <div class="intro">Sparta<br>Gym</div>
@@ -35,7 +35,7 @@
             <p><br></p>
             <div class="cardio">
                 <div>
-                    <img class="img_cardio" src="/images/Cardio_Image.jpg" alt="ImageCardio">
+                    <img class="img_cardio" src="images/Cardio_Image.jpg" alt="ImageCardio">
                 </div>
                 <div class="cardioText">
                     <h2 style="text-align: center;"><b>Cardio</b></h2>
@@ -49,13 +49,13 @@
                     <h4 style="margin-top: 20px;">You'll find a wide range of free weights in our gym, from kettlebells to dumbbells and bars.</h4>
                 </div>
                 <div>
-                    <img class="img_weight" src="/images/Weights.jpg" alt="ImageWeight">
+                    <img class="img_weight" src="images/Weights.jpg" alt="ImageWeight">
                 </div>
             </div>
 
             <div class="stretching">
                 <div>
-                    <img class="img_Stretch" src="/images/Stretching.jpg" alt="ImageStretch">
+                    <img class="img_Stretch" src="images/Stretching.jpg" alt="ImageStretch">
                 </div>
                 <div class="stretchText">
                     <h2 style="text-align: center;"><b>Stretching</b></h2>
@@ -64,13 +64,13 @@
             </div>
 
             <div class="advertisement">
-                <img class="smallImage1" src="/images/smallImage1.jpg" alt="girlDoingExercise">
+                <img class="smallImage1" src="images/smallImage1.jpg" alt="girlDoingExercise">
                 <h1 class="text1"><b>Come and<br>join our<br>courses</b></h1>
-                <img class="smallImage2" src="/images/smallImage2.jpg" alt="Abs">
+                <img class="smallImage2" src="images/smallImage2.jpg" alt="Abs">
             </div>
             <div class="advertisement2">
                 <h1 class="text2"><b>We have personal trainers<br>ready to help you in every<br>course</b></h1>
-                <img style="flex-grow: 1;" class="smallImage3" src="/images/smallImage3.jpg" alt="Gym">
+                <img style="flex-grow: 1;" class="smallImage3" src="images/smallImage3.jpg" alt="Gym">
                 <p></p>
             </div>
         </div>
@@ -81,7 +81,7 @@
         <div class="flex-container">
             <div class="open">
                 <div>
-                    <img class="openimg" style="opacity: 0;" src="/images/openimg.png" alt="Openimg">
+                    <img class="openimg" style="opacity: 0;" src="images/openimg.png" alt="Openimg">
                 </div>
                 <div class="textWithopen" style="flex-grow: 1;">
                     <p>We are open:<br>
@@ -90,24 +90,23 @@
                         Come and exercise whenever you want<br></p>
                 </div>
                 <div>
-                    <img class="openimg" src="/images/openimg.png" alt="Openimg">
+                    <img class="openimg" src="images/openimg.png" alt="Openimg">
                 </div>
             </div>     
         </div>
     </div>
 
     <div class="JoinUsForm">
-    
         <button id="joinUsButton">Click to Join as a staff member</button>
         <form class="formJoin" id="formJoin">
             <label for="fname">First name:</label><br>
-            <input type="text" id="fname" name="fname"><br>
+            <input type="text" id="fname" name="fname" required><br>
             <label for="lname">Last name:</label><br>
-            <input type="text" id="lname" name="lname"><br>
+            <input type="text" id="lname" name="lname" required><br>
             <label for="uname">Username:</label><br>
-            <input type="text" id="uname" name="uname"><br>
+            <input type="text" id="uname" name="uname" required><br>
             <label for="passw">Password:</label><br>
-            <input type="text" id="passw" name="passw"><br>
+            <input type="text" id="passw" name="passw" required><br>
             <input type="submit" value="Submit">
         </form>
     </div>
@@ -120,7 +119,7 @@
             <p><br></p>
             <div class="hameenlinna">
                 <div>
-                   <a href="https://www.google.com/maps/place/Visamäentie+25,+13100+Hämeenlinna/@60.9809433,24.4652459,15z/data=!4m5!3m4!1s0x468e5d82758189e1:0xaae076d18a3ee01!8m2!3d60.980737!4d24.4750114"><img class="img_hml" src="/images/hmlmap.jpg" alt="hmlmap"></a>
+                   <a href="https://www.google.com/maps/place/Visamäentie+25,+13100+Hämeenlinna/@60.9809433,24.4652459,15z/data=!4m5!3m4!1s0x468e5d82758189e1:0xaae076d18a3ee01!8m2!3d60.980737!4d24.4750114"><img class="img_hml" src="images/hmlmap.jpg" alt="hmlmap"></a>
                 </div>
                 <div class="hmltext">
                     <h2 ><b>Sparta Gym Hämeenlinna</b></h2>
@@ -134,13 +133,13 @@
                     <h4 style="margin-top: 1em;">Sparta Gym HAMK  continues to provide high-quality exercise facilities, personal training services for all kinds of exercises, and over 70 group fitness classes weekly to choose from!</h4>
                 </div>
                 <div>
-                    <a href="https://www.google.com/maps/place/Visamäentie+25,+13100+Hämeenlinna/@60.9809433,24.4652459,15z/data=!4m5!3m4!1s0x468e5d82758189e1:0xaae076d18a3ee01!8m2!3d60.980737!4d24.4750114"><img class="img_hamk" src="/images/hamkmap.jpg" alt="hamkmap"></a>
+                    <a href="https://www.google.com/maps/place/Visamäentie+25,+13100+Hämeenlinna/@60.9809433,24.4652459,15z/data=!4m5!3m4!1s0x468e5d82758189e1:0xaae076d18a3ee01!8m2!3d60.980737!4d24.4750114"><img class="img_hamk" src="images/hamkmap.jpg" alt="hamkmap"></a>
                 </div>
             </div>
     
             <div class="tre">
                 <div>
-                    <a href="https://www.google.com/maps/place/Rautatienkatu+25,+33100+Tampere/@61.4988947,23.7708341,17z/data=!3m1!4b1!4m5!3m4!1s0x468edf327e8f00b3:0x60b4c1089733abec!8m2!3d61.4988947!4d23.7730228"><img class="img_tre" src="/images/tremap.jpg" alt="tremap"></a>
+                    <a href="https://www.google.com/maps/place/Rautatienkatu+25,+33100+Tampere/@61.4988947,23.7708341,17z/data=!3m1!4b1!4m5!3m4!1s0x468edf327e8f00b3:0x60b4c1089733abec!8m2!3d61.4988947!4d23.7730228"><img class="img_tre" src="images/tremap.jpg" alt="tremap"></a>
                 </div>
                 <div class="tretext">
                     <h2 ><b>Sparta Gym Tampere</b></h2>
@@ -155,7 +154,7 @@
         <div class="flex-container">
             <div class="info">
                 <div class="textWithInfo">
-                    <img class="icon2" src="/images/telephone.png" alt="">
+                    <img class="icon2" src="images/telephone.png" alt="">
                     <p style="padding-top: 2em;">Phone number:<br>
                         +358 51 999769638 (24/7 for every branch)<br>
                         +358 41 682567721 (Sparta Gym Hämeenlinna)<br>
@@ -167,14 +166,14 @@
                         spartagym@gym.com</p>
                 </div>
                 <div class="socialMedia">
-                    <img class="icon1" src="/images/spartan.png" alt="">
+                    <img class="icon1" src="images/spartan.png" alt="">
                     <p style="padding-top: 2em;">You can also follow us on social media:</p>
                     <div class="instagram">
-                        <a href="https://www.instagram.com"><img class="instagramImg" src="/images/instagram.png" alt="instagramImg"></a>
+                        <a href="https://www.instagram.com"><img class="instagramImg" src="images/instagram.png" alt="instagramImg"></a>
                         <a href="https://www.instagram.com"><p style="padding-top: 1em;padding-left: 1em;">Instagram</p></a>
                     </div>
                     <div class="facebook">
-                        <a href="https://www.facebook.com"><img class="facebookImg" src="/images/facebook.png" alt="facebookImg"></a>
+                        <a href="https://www.facebook.com"><img class="facebookImg" src="images/facebook.png" alt="facebookImg"></a>
                         <a href="https://www.facebook.com"><p style="padding-top: 1em;padding-left: 1em;">Facebook</p></a>
                     </div>
                 </div>
@@ -187,31 +186,30 @@
         function newForm(){
             if(switchForm){
                 document.getElementById("joinUsButton").innerHTML = "Click to Join as a customer";
-                document.getElementById("formJoin").innerHTML = '<form class="formJoin" id="formJoin"><label for="fname"> name:</label><br><input type="text" id="fname" name="fname"><br><label for="lname">Last name:</label><br><input type="text" id="lname" name="lname"><br><label for="uname">Other information:</label><br><input type="text" id="uname" name="uname"><br><label for="passw">Password:</label><br><input type="text" id="passw" name="passw"><br><input type="submit" value="Click to send form"></form>';  
+                document.getElementById("formJoin").innerHTML = '<form class="formJoin" id="formJoin"><label for="fname"> name:</label><br><input type="text" id="fname" name="fname" required><br><label for="lname">Last name:</label><br><input type="text" id="lname" name="lname" required><br><label for="uname">Other information:</label><br><input type="text" id="uname" name="uname" required><br><label for="passw">Password:</label><br><input type="text" id="passw" name="passw" required><br><input type="submit" value="Click to send form"></form>';  
             }
             else{
                 document.getElementById("joinUsButton").innerHTML = "Click to Join as a staff member";
-                document.getElementById("formJoin").innerHTML = '<form class="formJoin" id="formJoin"><label for="fname">First name:</label><br><input type="text" id="fname" name="fname"><br><label for="lname">Last name:</label><br><input type="text" id="lname" name="lname"><br><label for="uname">Username:</label><br><input type="text" id="uname" name="uname"><br><label for="passw">Password:</label><br><input type="text" id="passw" name="passw"><br><input type="submit" value="Submit"></form>';  
+                document.getElementById("formJoin").innerHTML = '<form class="formJoin" id="formJoin"><label for="fname">First name:</label><br><input type="text" id="fname" name="fname" required><br><label for="lname">Last name:</label><br><input type="text" id="lname" name="lname" required><br><label for="uname">Username:</label><br><input type="text" id="uname" name="uname" required><br><label for="passw">Password:</label><br><input type="text" id="passw" name="passw" required><br><input type="submit" value="Submit"></form>';  
             }
             switchForm = !switchForm;
         };
         
     </script>
 
-<p>Contact us!</p>
-<form id="contact" action="db.php">
-    First name: <input type="text" name="fname"><br>
-    Last name: <input type="text" name="lname"><br><br>
-    Email: <input type="text" name="email"><br><br>
-    Phone: <input type="text" name="phone"><br><br>
-    <input type="button" onclick="contactform()" value="Submit">
-  </form>
-  
-  <script>
-  function contactform() {
-    document.getElementById("contact").submit();
-  }
-  </script>
+    <p>Contact us!</p>
+    <form id="contact" action="db.php">
+        First name: <input type="text" name="fname"><br>
+        Last name: <input type="text" name="lname"><br><br>
+        Email: <input type="text" name="email"><br><br>
+        Phone: <input type="text" name="phone"><br><br>
+        <input type="button" onclick="contactform()" value="Submit">
+    </form>
     
+    <script>
+    function contactform() {
+        document.getElementById("contact").submit();
+    }
+    </script>
 </body>
 </html>
