@@ -27,6 +27,13 @@ header {
   object-fit: cover;
 }
 
+.JoinUsForm{
+  background: #1f4161;
+  color: snow;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
 .intro-container {
   display: flex;
   flex-direction: row;
@@ -34,7 +41,7 @@ header {
   max-height: 100rem;
   color: snow;
   user-select: none;
-  background: url("/images/bigImage.jpg");
+  background: url("images/bigImage.jpg");
   background-size: cover;
   align-items: center;
   justify-content: space-around;
