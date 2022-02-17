@@ -27,6 +27,13 @@ header {
   object-fit: cover;
 }
 
+.JoinUsForm{
+  background: #1f4161;
+  color: snow;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
 .intro-container {
   display: flex;
   flex-direction: row;
