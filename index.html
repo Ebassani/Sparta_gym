@@ -197,5 +197,21 @@
         };
         
     </script>
+
+<p>Contact us!</p>
+<form id="contact" action="db.php">
+    First name: <input type="text" name="fname"><br>
+    Last name: <input type="text" name="lname"><br><br>
+    Email: <input type="text" name="email"><br><br>
+    Phone: <input type="text" name="phone"><br><br>
+    <input type="button" onclick="contactform()" value="Submit">
+  </form>
+  
+  <script>
+  function contactform() {
+    document.getElementById("contact").submit();
+  }
+  </script>
+    
 </body>
 </html>
