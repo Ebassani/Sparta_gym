@@ -1,64 +1,66 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 header {
-  display: flex;
-  height: 5em;
-  color: snow;
-  background: #1f4161;
-  width: 100%;
-  flex-direction: row;
+    display: flex;
+    height: 5em;
+    color: snow;
+    background: #1f4161;
+    width: 100%;
+    flex-direction: row;
 }
 
 .title {
-  font-weight: bold;
-  padding-left: 1em;
-  display: flex;
-  align-items: center;
-}
-.logo {
-  height: 4em;
-  width: 3em;
-  margin-top: 6px;
-  margin-left: 0.5em;
-  object-fit: cover;
+    font-weight: bold;
+    padding-left: 1em;
+    display: flex;
+    align-items: center;
 }
 
-.JoinUsForm{
-  background: #1f4161;
-  color: snow;
-  text-align: center;
-  padding-bottom: 10px;
+.logo {
+    height: 4em;
+    width: 3em;
+    margin-top: 6px;
+    margin-left: 0.5em;
+    object-fit: cover;
+}
+
+.JoinUsForm {
+    background: #1f4161;
+    color: snow;
+    text-align: center;
+    padding-bottom: 10px;
 }
 
 .intro-container {
-  display: flex;
-  flex-direction: row;
-  height: 100vh;
-  max-height: 100rem;
-  color: snow;
-  user-select: none;
-  background: url("images/bigImage.jpg");
-  background-size: cover;
-  align-items: center;
-  justify-content: space-around;
-  background-repeat: no-repeat;
-  background-position: center;
-  flex-wrap: wrap;
-  text-shadow: 3px 3px 5px black;
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    max-height: 100rem;
+    color: snow;
+    user-select: none;
+    background-size: cover;
+    align-items: center;
+    justify-content: space-around;
+    background: url("../images/bigImage.jpg") no-repeat center;
+    flex-wrap: wrap;
+    text-shadow: 3px 3px 5px black;
 }
+
 .intro {
-  font-size: 5em;
-  font-weight: bold;
+    font-size: 5em;
+    font-weight: bold;
 }
+
 .intro2 {
     font-size: 3em;
     font-weight: bold;
 }
-.introduction-container{
+
+.introduction-container {
     display: flex;
     justify-content: space-around;
     flex-direction: row;
@@ -68,13 +70,15 @@ header {
     font-weight: lighter;
     flex-wrap: wrap;
 }
-.txt1{
+
+.txt1 {
     margin-top: 2em;
     padding-left: 1em;
     padding-right: 2em;
     max-width: 500px;
 }
-.txt2{
+
+.txt2 {
     margin-top: 5em;
     max-width: 500px;
     padding-right: 1em;
