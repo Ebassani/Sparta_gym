@@ -1,4 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="Css/CssStyling.css">
+    <title>Sparta Gym</title>
+    <link rel="stylesheet" href="Css/project1.css">
+    <style>
+        #textLogin {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
 <?php
+include "header.php";
 include "db.php";
 /**
  * @var mysqli $conn
@@ -17,12 +36,10 @@ echo "<br><h1>Welcome $name</h1><br>";
 
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
-    echo "<table class=\"table\"><tr><th>ID</th><th>First Name</th><th>Last Name</th><th>phone_number</th> </tr><th>Package</th><th>Registration Date</th><th>Username</th>";
+    echo "<table class=\"table\"><tr><th>ID</th><th>Name</th><th>Profession</th><th>Salary</th></tr>";
     while ($row = $result->fetch_assoc()) {
-        echo "<tr><td>" . $row["id"] . "</td><td>" . $row["fname"] . "</td> <td>" . $row["lname"]
-            . "</td><td>" . $row["phone_number"] . "</td><td>" . $row["payment_id"]
-            . "</td><td>" . $row["registration_date"] . "</td>
-            <td>" . $row["uname"] . "</td></tr>";
+        echo "<tr><td>" . $row["id"] . "</td><td>" . $row["name"] . "</td> <td>" . $row["profession"]
+            . "</td><td>" . $row["salary"] . "</td></tr>";
     }
     echo "</table>";
 } else {

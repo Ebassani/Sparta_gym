@@ -83,7 +83,7 @@ if (isset($_POST['workId']) && $_POST['workId'] != "" && $_POST['passw'] != '') 
     $prof=$obj->profession;
     $count = mysqli_num_rows($result);
     if($count == 1) {
-        $_SESSION['name'] = $workId;
+        $_SESSION['id'] = $workId;
         $_SESSION['passw'] = $passw;
         if($prof=="admin"){
             header("location:pageAdm.php");
