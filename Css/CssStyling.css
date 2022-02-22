@@ -218,3 +218,16 @@ a {
 a:hover {
     color: snow;
 }
+
+.loginDiv {
+    margin: 0 auto;
+    background: #1f4161;
+}
+
+.loginBody {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url("../images/sven-mieke-MsCgmHuirDo-unsplash.jpg") no-repeat center right;
+    background-size: cover;
+}

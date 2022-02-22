@@ -12,13 +12,9 @@
 </head>
 
 <body>
-<header>
-    <div class="logo-container">
-        <a href=""><img class="logo" src="images/spartan.png" alt="logo"></a>
-    </div>
-    <h2 class="title"><a href="">Sparta Gym</a></h2>
-    <h2 class="title"><a href="login.php">Login</a></h2>
-</header>
+<?php
+include "header.php";
+?>
 <div class="intro-container">
     <div class="intro">Sparta<br>Gym</div>
     <div class="intro2">The best gym<br>in town</div>

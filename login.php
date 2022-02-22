@@ -10,21 +10,20 @@
     <link rel="stylesheet" href="Css/CssStyling.css">
 </head>
 <body>
-<header>
-    <div class="logo-container">
-        <a href="index.php"><img class="logo" src="images/spartan.png" alt="logo"></a>
+<?php
+include "header.php";
+?>
+<div class="loginBody">
+    <div class="loginDiv">
+        <form class="login" id="login" method="post">
+            <label for="unameCus">Username:</label><br>
+            <input type="text" id="unameCus" name="unameCus"><br>
+            <label for="passw">Password:</label><br>
+            <input type="text" id="passw" name="passw" ><br>
+            <input type="submit" value="Submit">
+        </form>
+        <button id="loginSwitch">Click to Join as a staff member</button>
     </div>
-    <h2 class="title"><a href="index.php">Sparta Gym</a></h2>
-</header>
-<div class="middle">
-    <form class="login" id="login" method="post">
-        <label for="uname">Username:</label><br>
-        <input type="text" id="unameCus" name="unameCus" required><br>
-        <label for="passw">Password:</label><br>
-        <input type="text" id="passw" name="passw" required><br>
-        <input type="submit" value="Submit">
-    </form>
-    <button id="loginSwitch">Click to Join as a staff member</button>
 </div>
 <script>
     let switchForm = true;
@@ -35,10 +34,10 @@
     function newForm() {
         if (switchForm) {
             document.getElementById("loginSwitch").innerHTML = "Click to Join as a customer";
-            document.getElementById("login").innerHTML = '<form class="login" id="login" method="post"><label for="workId">Work Id:</label><br><input type="text" id="workId" name="workId" required><br><label for="passw">Password:</label><br><input type="text" id="passw" name="passw" required><br><input type="submit" value="Submit"></form>';
+            document.getElementById("login").innerHTML = '<form class="login" id="login" method="post"><label for="workId">Work Id:</label><br><input type="number" id="workId" name="workId"><br><label for="passw">Password:</label><br><input type="text" id="passw" name="passw"><br><input type="submit" value="Submit"></form>';
         } else {
             document.getElementById("loginSwitch").innerHTML = "Click to Join as a staff member";
-            document.getElementById("login").innerHTML = '<form class="login" id="login" method="post"><label for="uname">Username:</label><br><input type="text" id="unameCus" name="unameCus" required><br><label for="passw">Password:</label><br><input type="text" id="passw" name="passw" required><br><input type="submit" value="Submit"></form>';
+            document.getElementById("login").innerHTML = '<form class="login" id="login" method="post"><label for="uname">Username:</label><br><input type="text" id="unameCus" name="unameCus"><br><label for="passw">Password:</label><br><input type="text" id="passw" name="passw" ><br><input type="submit" value="Submit"></form>';
         }
         switchForm = !switchForm;
     }
@@ -55,33 +54,11 @@ include "db.php";
 
 session_start();
 
-$sql = "select * from customers";
-
-
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-//fetch_assoc(): It fetches result as an associative array.
-    echo "<table class=\"table\"><tr><th>ID</th><th>First Name</th><th>Last Name</th>
-<th>adress</th><th>phone_number</th> </tr>";
-    while ($row = $result->fetch_assoc()) {
-        echo "<tr><td>" . $row["id"] . "</td><td>" . $row["fname"] . "</td> <td>" . $row["lname"]
-
-            . "</td><td>" . $row["adress"] . "</td><td>" . $row["phone_number"]
-            . "</td></tr>";
-    }
-    echo "</table>";
-} else {
-    echo "no results";
-}
-
-
-//actual Code
-
-if (isset($_POST['unameCus'])) {
+if (isset($_POST['unameCus']) && $_POST['unameCus'] != "" && $_POST['passw'] != '') {
     $username = $_POST['unameCus'];
     $password = $_POST['passw'];
 
-    $sql = "SELECT id FROM customers WHERE phone_number = '$username' and adress = '$password'";
+    $sql = "SELECT id FROM customers WHERE uname = '$username' and passw = '$password'";
     $result = $conn->query($sql);
 
     $count = mysqli_num_rows($result);
@@ -92,7 +69,32 @@ if (isset($_POST['unameCus'])) {
         exit();
 
     }else {
-        echo "tenta de novo";
+        echo "Password or username wrong, please try again.";
+    }
+}
+
+if (isset($_POST['workId']) && $_POST['workId'] != "" && $_POST['passw'] != '') {
+    $workId = $_POST['workId'];
+    $passw = $_POST['passw'];
+
+    $sql = "SELECT profession FROM staff WHERE id = '$workId' and password = '$passw'";
+    $result = $conn->query($sql);
+    $obj = $result->fetch_object();
+    $prof=$obj->profession;
+    $count = mysqli_num_rows($result);
+    if($count == 1) {
+        $_SESSION['name'] = $workId;
+        $_SESSION['passw'] = $passw;
+        if($prof=="admin"){
+            header("location:pageAdm.php");
+        }
+        else{
+            header("location:pageStaff.php");
+        }
+        exit();
+
+    }else {
+        echo "Password or work Id wrong, please try again.";
     }
 }
 $conn->close();
