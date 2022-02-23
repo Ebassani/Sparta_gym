@@ -43,7 +43,7 @@ echo "<br><h1>Welcome $name</h1><br>";
 
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
-    echo "<table class=\"table\"><tr><th>ID</th><th>Name</th><th>Profession</th><th>Salary</th></tr>";
+    echo '<table class=\"table\"><tr><th>ID</th><th>Name</th><th>Profession</th><th>Salary</th></tr>';
     while ($row = $result->fetch_assoc()) {
         echo "<tr><td>" . $row["id"] . "</td><td>" . $row["name"] . "</td> <td>" . $row["profession"]
             . "</td><td>" . $row["salary"] . "</td></tr>";
@@ -100,7 +100,7 @@ if (isset($_POST['name'])) {
     let changeMessages = false;
     document.getElementById("nameChangeStaff").style.display = "none";
     document.getElementById("updateButton").onclick = function () {
-        changeDisplay(change,"nameChangeStaff")
+        changeDisplay()
     };
 
     document.getElementById("messageDisplay").style.display = "none";
