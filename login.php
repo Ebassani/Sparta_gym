@@ -19,7 +19,7 @@ include "header.php";
             <label for="unameCus">Username:</label><br>
             <input type="text" id="unameCus" name="unameCus"><br>
             <label for="passw">Password:</label><br>
-            <input type="text" id="passw" name="passw" ><br>
+            <input type="password" id="passw" name="passw" ><br>
             <input type="submit" value="Submit">
         </form>
         <button id="loginSwitch">Click to Join as a staff member</button>
@@ -34,10 +34,10 @@ include "header.php";
     function newForm() {
         if (switchForm) {
             document.getElementById("loginSwitch").innerHTML = "Click to Join as a customer";
-            document.getElementById("login").innerHTML = '<form class="login" id="login" method="post"><label for="workId">Work Id:</label><br><input type="number" id="workId" name="workId"><br><label for="passw">Password:</label><br><input type="text" id="passw" name="passw"><br><input type="submit" value="Submit"></form>';
+            document.getElementById("login").innerHTML = '<form class="login" id="login" method="post"><label for="workId">Work Id:</label><br><input type="number" id="workId" name="workId"><br><label for="passw">Password:</label><br><input type="password" id="passw" name="passw"><br><input type="submit" value="Submit"></form>';
         } else {
             document.getElementById("loginSwitch").innerHTML = "Click to Join as a staff member";
-            document.getElementById("login").innerHTML = '<form class="login" id="login" method="post"><label for="uname">Username:</label><br><input type="text" id="unameCus" name="unameCus"><br><label for="passw">Password:</label><br><input type="text" id="passw" name="passw" ><br><input type="submit" value="Submit"></form>';
+            document.getElementById("login").innerHTML = '<form class="login" id="login" method="post"><label for="uname">Username:</label><br><input type="text" id="unameCus" name="unameCus"><br><label for="passw">Password:</label><br><input type="password" id="passw" name="passw" ><br><input type="submit" value="Submit"></form>';
         }
         switchForm = !switchForm;
     }
@@ -80,9 +80,10 @@ if (isset($_POST['workId']) && $_POST['workId'] != "" && $_POST['passw'] != '') 
     $sql = "SELECT profession FROM staff WHERE id = '$workId' and password = '$passw'";
     $result = $conn->query($sql);
     $obj = $result->fetch_object();
-    $prof=$obj->profession;
     $count = mysqli_num_rows($result);
+
     if($count == 1) {
+        $prof=$obj->profession;
         $_SESSION['id'] = $workId;
         $_SESSION['passw'] = $passw;
         if($prof=="admin"){

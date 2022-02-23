@@ -33,18 +33,19 @@ $sql = "SELECT * FROM customers WHERE uname = '$username' and passw = '$password
 $result = $conn->query($sql);
 $obj = $result->fetch_object();
 $name = $obj->fname;
-?>
-<h1><?php echo "Welcome $name" ?></h1>
-<?php
+
 $result = $conn->query($sql);
 
 $count = mysqli_num_rows($result);
 if ($count != 1) {
-    $_SESSION['name'] = $username;
-    $_SESSION['passw'] = $password;
     header("location:login.php");
     exit();
 }
+
+?>
+<h1><?php echo "Welcome $name" ?></h1>
+<?php
+
 if ($result->num_rows > 0) {
     echo '<table class="table"><tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Phone number</th><th>Package</th><th>Registration Date</th><th>Username</th></tr>';
     while ($row = $result->fetch_assoc()) {
@@ -61,11 +62,11 @@ $result = mysqli_query($conn,"SELECT * FROM customers WHERE uname= '$username'")
 $row= mysqli_fetch_array($result);
 ?>
 <a href="logOut.php">
-    <button id="logOutButton">Log Out</button>
+    <button class="pageButton" id="logOutButton">Log Out</button>
 </a>
-<a>
-    <button id="updateButton">Change information</button>
-</a>
+
+<button class="pageButton" id="updateButton">Change information</button>
+
 
 
 <div class="changeDataCustomer" id="formChangeCustomer">
@@ -97,7 +98,8 @@ if(isset($_POST['submit'])) {
     $lname = $_POST['lname'];
     $phone = $_POST['phone_number'];
     $payment= $_POST['package'];
-    $query = mysqli_query($conn, "UPDATE customers set fname='$fname',lname='$lname',phone_number='$phone',payment_id='$payment' where uname='$username' and passw='$password'");
+    mysqli_query($conn, "UPDATE customers set fname='$fname',lname='$lname',phone_number='$phone',payment_id='$payment' where uname='$username' and passw='$password'");
+    echo "Changes were saved, reload the page to see them";
 }
 ?>
 <script>
