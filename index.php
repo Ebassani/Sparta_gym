@@ -98,7 +98,7 @@ include "header.php";
 
 <div class="JoinUsForm">
     <button id="joinUsButton">Click to Join as a staff member</button>
-    <form class="formJoin" id="formJoin" method="post" action="test.php">
+    <form class="formJoin" id="formJoin" method="post" action="">
         <label for="fname">First name:</label><br>
         <input type="text" id="fname" name="fname" required><br>
         <label for="lname">Last name:</label><br>

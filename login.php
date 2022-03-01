@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="Css/project1.css">
     <link rel="stylesheet" href="Css/CssStyling.css">
 </head>
-<body>
+<body class="loginBody">
 <?php
 include "header.php";
 ?>
-<div class="loginBody">
+<div class="login1">
     <div class="loginDiv">
         <form class="login" id="login" method="post">
             <label for="unameCus">Username:</label><br>
@@ -25,6 +25,7 @@ include "header.php";
         <button id="loginSwitch">Click to Join as a staff member</button>
     </div>
 </div>
+
 <script>
     let switchForm = true;
     document.getElementById("loginSwitch").onclick = function () {
