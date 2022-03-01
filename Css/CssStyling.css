@@ -1,37 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Spartan&display=swap');
 
-body
-{
+body {
     margin-right: auto;
     margin-left: auto;
     font-family: 'Spartan', sans-serif;
 }
 
-img
-{
+img {
     user-select: none;
     -webkit-user-drag: none;
 }
 
-.middle_part
-{
-    background: url("images/Background_middle_part.jpg");
+.middle_part {
+    background: url("../images/Background_middle_part.jpg");
     font-family: 'Spartan', sans-serif;
     background-position: center right;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.cardio
-{
+.cardio {
     background-color: rgba(196, 196, 196, 0.7);
     margin: 70px 30px 40px 30px;
     justify-content: space-around;
     display: flex;
     flex-wrap: wrap;
 }
-.img_cardio
-{
+
+.img_cardio {
     object-fit: cover;
     width: 45vw;
     max-width: 700px;
@@ -40,16 +36,15 @@ img
     border-radius: 300px;
 }
 
-.stretching
-{
+.stretching {
     background-color: rgba(196, 196, 196, 0.7);
     margin: 70px 30px 40px 30px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
-.img_Stretch
-{
+
+.img_Stretch {
     object-fit: cover;
     width: 45vw;
     max-width: 700px;
@@ -58,16 +53,15 @@ img
     border-radius: 300px;
 }
 
-.weights
-{
+.weights {
     background-color: rgba(196, 196, 196, 0.7);
     margin: 70px 30px 40px 30px;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
-.img_weight
-{
+
+.img_weight {
     object-fit: cover;
     width: 45vw;
     max-width: 700px;
@@ -76,57 +70,50 @@ img
     border-radius: 300px;
 }
 
-.text1
-{
+.text1 {
     margin-top: 100px;
     text-align: center;
-    
+
     font-size: 64px;
     justify-content: center;
     color: snow;
 }
 
-.text2
-{
+.text2 {
     text-align: center;
     color: snow;
 }
 
-.cardioText
-{
-    margin: 70px 20px 20px 20px;
-    max-width: 60vh;
-}
-.weightText
-{
+.cardioText {
     margin: 70px 20px 20px 20px;
     max-width: 60vh;
 }
 
-
-.stretchText
-{
+.weightText {
     margin: 70px 20px 20px 20px;
     max-width: 60vh;
 }
 
-.advertisement
-{
+
+.stretchText {
+    margin: 70px 20px 20px 20px;
+    max-width: 60vh;
+}
+
+.advertisement {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.advertisement2
-{
+.advertisement2 {
     display: flex;
     justify-content: center;
     flex-direction: column;
     padding-bottom: 1em;
 }
 
-.smallImage1
-{
+.smallImage1 {
     margin-top: 15em;
     object-fit: cover;
     width: 29vw;
@@ -136,8 +123,7 @@ img
     max-height: 200px;
 }
 
-.smallImage2
-{
+.smallImage2 {
     margin-top: 15em;
     object-fit: cover;
     width: 29vw;
@@ -147,8 +133,7 @@ img
     max-height: 200px;
 }
 
-.smallImage3
-{
+.smallImage3 {
     object-fit: cover;
     object-fit: cover;
     width: 29vw;
@@ -160,14 +145,12 @@ img
     margin-right: auto;
 }
 
-.contactInfo
-{
+.contactInfo {
     background-color: #1F4161;
     color: snow;
 }
 
-.icon1
-{
+.icon1 {
     display: flex;
     flex-direction: row;
     object-fit: cover;
@@ -176,8 +159,8 @@ img
     max-width: 200px;
     max-height: 200px;
 }
-.icon2
-{
+
+.icon2 {
     display: flex;
     flex-direction: row;
     object-fit: cover;
@@ -187,16 +170,14 @@ img
     max-height: 200px;
 }
 
-.textInfo
-{
+.textInfo {
     text-align: center;
     padding-top: 30px;
     padding-bottom: 30px;
 
 }
 
-.info
-{
+.info {
     padding-top: 1em;
     padding-bottom: 1em;
     display: flex;
@@ -204,39 +185,53 @@ img
     flex-wrap: wrap;
 }
 
-.instagramImg
-{
+.instagramImg {
     width: 3em;
     height: 3em;
     object-fit: cover;
     max-width: 100px;
     max-height: 100px;
 }
-.instagram
-{
+
+.instagram {
     display: flex;
     padding-bottom: 1em;
 }
 
-.facebookImg
-{
+.facebookImg {
     width: 3em;
     height: 3em;
     object-fit: cover;
     max-width: 100px;
     max-height: 100px;
 }
-.facebook
-{
+
+.facebook {
     display: flex;
 }
 
-a
-{
+a {
     color: snow;
     text-decoration: none;
 }
-a:hover
-{
+
+a:hover {
     color: snow;
+}
+
+.loginDiv {
+    margin: 0 auto;
+    background: #1f4161;
+}
+
+.loginBody {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url("../images/sven-mieke-MsCgmHuirDo-unsplash.jpg") no-repeat center right;
+    background-size: cover;
+}
+
+.hidden{
+    display: none;
 }

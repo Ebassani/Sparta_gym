@@ -10,47 +10,92 @@
     <link rel="stylesheet" href="Css/CssStyling.css">
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-          <a href="index.php"><img class="logo" src="images/spartan.png" alt="logo" ></a>
-        </div>
-        <h2 class="title"><a href="index.php">Sparta Gym</a></h2>
-    </header>
-    <div class="middle">
-        <form class="login" id="login" method="post" action="login.php">
-            <label for="fname">First name:</label><br>
-            <input type="text" id="fname" name="fname"><br>
-            <label for="lname">Last name:</label><br>
-            <input type="text" id="lname" name="lname"><br>
-            <label for="uname">Username:</label><br>
-            <input type="text" id="uname" name="uname"><br>
+<?php
+include "header.php";
+?>
+<div class="loginBody">
+    <div class="loginDiv">
+        <form class="login" id="login" method="post">
+            <label for="unameCus">Username:</label><br>
+            <input type="text" id="unameCus" name="unameCus"><br>
             <label for="passw">Password:</label><br>
-            <input type="text" id="passw" name="passw"><br>
+            <input type="password" id="passw" name="passw" ><br>
             <input type="submit" value="Submit">
         </form>
         <button id="loginSwitch">Click to Join as a staff member</button>
     </div>
-    <script>
-        var switchForm=true;
-        document.getElementById("loginSwitch").onclick = function() {newForm() };
-        function newForm(){
-            if(switchForm){
-                document.getElementById("loginSwitch").innerHTML = "Click to Join as a customer";
-                document.getElementById("login").innerHTML = '<form class="login" id="login" method="post" action="login.php><label for="fname"> name:</label><br><input type="text" id="fname" name="fname" required><br><label for="lname">Last name:</label><br><input type="text" id="lname" name="lname" required><br><label for="uname">Other information:</label><br><input type="text" id="uname" name="uname" required><br><label for="passw">Password:</label><br><input type="text" id="passw" name="passw" required><br><input type="submit" value="Click to send form"></form>';  
-            }
-            else{
-                document.getElementById("loginSwitch").innerHTML = "Click to Join as a staff member";
-                document.getElementById("login").innerHTML = '<form class="login" id="login" method="post" action="login.php><label for="fname">First name:</label><br><input type="text" id="fname" name="fname" required><br><label for="lname">Last name:</label><br><input type="text" id="lname" name="lname" required><br><label for="uname">Username:</label><br><input type="text" id="uname" name="uname" required><br><label for="passw">Password:</label><br><input type="text" id="passw" name="passw" required><br><input type="submit" value="Submit"></form>';  
-            }
-            switchForm = !switchForm;
-        };
-        
-    </script>
+</div>
+<script>
+    let switchForm = true;
+    document.getElementById("loginSwitch").onclick = function () {
+        newForm()
+    };
+
+    function newForm() {
+        if (switchForm) {
+            document.getElementById("loginSwitch").innerHTML = "Click to Join as a customer";
+            document.getElementById("login").innerHTML = '<form class="login" id="login" method="post"><label for="workId">Work Id:</label><br><input type="number" id="workId" name="workId"><br><label for="passw">Password:</label><br><input type="password" id="passw" name="passw"><br><input type="submit" value="Submit"></form>';
+        } else {
+            document.getElementById("loginSwitch").innerHTML = "Click to Join as a staff member";
+            document.getElementById("login").innerHTML = '<form class="login" id="login" method="post"><label for="uname">Username:</label><br><input type="text" id="unameCus" name="unameCus"><br><label for="passw">Password:</label><br><input type="password" id="passw" name="passw" ><br><input type="submit" value="Submit"></form>';
+        }
+        switchForm = !switchForm;
+    }
+
+</script>
 </body>
 </html>
 
 <?php
-require_once "db.php";
+include "db.php";
+/**
+ * @var mysqli $conn
+ */
 
+session_start();
 
+if (isset($_POST['unameCus'])) {
+    $username = $_POST['unameCus'];
+    $password = $_POST['passw'];
+
+    $sql = "SELECT id FROM customers WHERE uname = '$username' and passw = '$password'";
+    $result = $conn->query($sql);
+
+    $count = mysqli_num_rows($result);
+    if($count == 1) {
+        $_SESSION['name'] = $username;
+        $_SESSION['passw'] = $password;
+        header("location:page.php");
+        exit();
+    }else {
+        echo "Password or username wrong, please try again.";
+    }
+}
+
+if (isset($_POST['workId'])) {
+    $workId = $_POST['workId'];
+    $passw = $_POST['passw'];
+
+    $sql = "SELECT profession FROM staff WHERE id = '$workId' and password = '$passw'";
+    $result = $conn->query($sql);
+    $obj = $result->fetch_object();
+    $count = mysqli_num_rows($result);
+
+    if($count == 1) {
+        $prof=$obj->profession;
+        $_SESSION['id'] = $workId;
+        $_SESSION['passw'] = $passw;
+        if($prof=="admin"){
+            header("location:pageAdm.php");
+        }
+        else{
+            header("location:pageStaff.php");
+        }
+        exit();
+
+    }else {
+        echo "Password or work Id wrong, please try again.";
+    }
+}
+$conn->close();
 ?>
