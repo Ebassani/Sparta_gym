@@ -56,6 +56,7 @@ $id = $_POST['id'];
         </label>
         <br>
         <input type="submit" name="submit" value="Submit">
+        <button type="button" id="cancelButton" onclick="cancelPopUp()" class="button">Cancel</button>
     </form>
 </div>
 

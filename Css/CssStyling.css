@@ -231,3 +231,7 @@ a:hover {
     background: url("../images/sven-mieke-MsCgmHuirDo-unsplash.jpg") no-repeat center right;
     background-size: cover;
 }
+
+.hidden{
+    display: none;
+}

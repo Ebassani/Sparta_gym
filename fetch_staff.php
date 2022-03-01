@@ -28,5 +28,6 @@ $id = $_POST['id'];
         <input type="text" name="password" value="<?php echo $row['password']; ?>">
         <br>
         <input type="submit" name="submit" value="Submit">
+        <button type="button" id="cancelButton" onclick="cancelPopUp()" class="button">Cancel</button>
     </form>
 </div>

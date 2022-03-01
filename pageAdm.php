@@ -117,10 +117,7 @@ if ($result->num_rows > 0) {
     ?>
 </div>
 
-
-
 <div id="popUp"></div>
-
 
 <script type="text/javascript">
     if (localStorage.getItem("change") === null){
@@ -190,7 +187,7 @@ if ($result->num_rows > 0) {
     function changeDisplay(change,container) {
         change = !change;
         if (change) {
-            document.getElementById(container).style.display = "initial";
+            document.getElementById(container).style.display = "";
         } else {
             document.getElementById(container).style.display = "none";
         }
@@ -205,6 +202,7 @@ if ($result->num_rows > 0) {
             dataType: 'html',
             success: function(response) { $('#popUp').html(response); }
         });
+        document.getElementById("popUp").classList.remove("hidden");
     }
 
     function getCustomerById(number){
@@ -215,7 +213,13 @@ if ($result->num_rows > 0) {
             dataType: 'html',
             success: function(response) { $('#popUp').html(response); }
         });
+        document.getElementById("popUp").classList.remove("hidden");
     }
+
+    function cancelPopUp(){
+        document.getElementById("popUp").classList.add("hidden");
+    }
+
 
 </script>
 </body>
