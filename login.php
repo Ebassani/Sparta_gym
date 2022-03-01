@@ -54,7 +54,7 @@ include "db.php";
 
 session_start();
 
-if (isset($_POST['unameCus']) && $_POST['unameCus'] != "" && $_POST['passw'] != '') {
+if (isset($_POST['unameCus'])) {
     $username = $_POST['unameCus'];
     $password = $_POST['passw'];
 
@@ -67,13 +67,12 @@ if (isset($_POST['unameCus']) && $_POST['unameCus'] != "" && $_POST['passw'] != 
         $_SESSION['passw'] = $password;
         header("location:page.php");
         exit();
-
     }else {
         echo "Password or username wrong, please try again.";
     }
 }
 
-if (isset($_POST['workId']) && $_POST['workId'] != "" && $_POST['passw'] != '') {
+if (isset($_POST['workId'])) {
     $workId = $_POST['workId'];
     $passw = $_POST['passw'];
 

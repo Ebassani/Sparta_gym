@@ -58,8 +58,8 @@ if ($result->num_rows > 0) {
 } else {
     echo "no results";
 }
-$result = mysqli_query($conn,"SELECT * FROM customers WHERE uname= '$username'");
-$row= mysqli_fetch_array($result);
+$result = mysqli_query($conn, "SELECT * FROM customers WHERE uname= '$username'");
+$row = mysqli_fetch_array($result);
 ?>
 <a href="logOut.php">
     <button class="pageButton" id="logOutButton">Log Out</button>
@@ -68,12 +68,11 @@ $row= mysqli_fetch_array($result);
 <button class="pageButton" id="updateButton">Change information</button>
 
 
-
 <div class="changeDataCustomer" id="formChangeCustomer">
     <h2>Update Data</h2>
     <form method="post" action="">
         First Name: <br>
-        <input type="text" name="fname"  value="<?php echo $row['fname']; ?>">
+        <input type="text" name="fname" value="<?php echo $row['fname']; ?>">
         <br>
         Last Name :<br>
         <input type="text" name="lname" value="<?php echo $row['lname']; ?>">
@@ -83,38 +82,46 @@ $row= mysqli_fetch_array($result);
         <br>
         Subscription package:<br>
         <select name="package">
-            <option value="<?php $value= $row['payment_id']; echo $value ?>"><?php if($value==1){echo "Monthly package";}elseif($value==2){echo "Seasonal package";}elseif($value==3){echo "Yearly package";} ?></option>
-            <option value="1"> Monthly package </option>
-            <option value="2"> Seasonal package </option>
-            <option value="3"> Yearly package </option>
+            <option value="<?php $value = $row['payment_id'];
+            echo $value ?>">
+                <?php if ($value == 1) {
+                    echo "Monthly package";
+                } elseif ($value == 2) {
+                    echo "Seasonal package";
+                } elseif ($value == 3) {
+                    echo "Yearly package";
+                } ?></option>
+            <option value="1"> Monthly package</option>
+            <option value="2"> Seasonal package</option>
+            <option value="3"> Yearly package</option>
         </select>
         <br>
-        <input type="submit" name="submit" value="Submit" >
+        <input type="submit" name="submit" value="Submit">
     </form>
 </div>
 <?php
-if(isset($_POST['submit'])) {
+if (isset($_POST['submit'])) {
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
     $phone = $_POST['phone_number'];
-    $payment= $_POST['package'];
+    $payment = $_POST['package'];
     mysqli_query($conn, "UPDATE customers set fname='$fname',lname='$lname',phone_number='$phone',payment_id='$payment' where uname='$username' and passw='$password'");
     echo "Changes were saved, reload the page to see them";
 }
 ?>
 <script>
-    let change=false;
-    document.getElementById("formChangeCustomer").style.display="none";
-    document.getElementById("updateButton").onclick= function (){
+    let change = false;
+    document.getElementById("formChangeCustomer").style.display = "none";
+    document.getElementById("updateButton").onclick = function () {
         changeDisplay()
     };
+
     function changeDisplay() {
-        change= !change;
-        if (change){
+        change = !change;
+        if (change) {
             document.getElementById("formChangeCustomer").style.display = "initial";
-        }
-        else {
-            document.getElementById("formChangeCustomer").style.display="none";
+        } else {
+            document.getElementById("formChangeCustomer").style.display = "none";
         }
     }
 

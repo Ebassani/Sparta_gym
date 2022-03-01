@@ -7,14 +7,14 @@
 
     <link rel="stylesheet" href="Css/CssStyling.css">
     <title>Sparta Gym</title>
-    <link rel="stylesheet" href="Css/project1.css">
     <style>
         #textLogin {
             display: none;
         }
     </style>
 </head>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <body>
 <?php
 include "header.php";
@@ -24,6 +24,7 @@ include "db.php";
  */
 
 session_start();
+
 
 $staffId = $_SESSION['id'];
 $password = $_SESSION['passw'];
@@ -58,19 +59,21 @@ if ($result->num_rows > 0) {
 </a>
 
 <button class="pageButton" id="readCustomersButton">Check customers</button>
+<button class="pageButton" id="readStaff">Check Staff</button>
 <button class="pageButton" id="readMessages">Read Messages</button>
 
 <div id="checkCustomers">
     <?php
-    $sql = "SELECT * FROM customers";
-    $result = $conn->query($sql);
-    if ($result->num_rows > 0) {
-        echo '<table class="table"><tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Phone number</th><th>Package</th><th>Registration Date</th><th>Username</th><th>Password</th></tr>';
-        while ($row = $result->fetch_assoc()) {
+    $sqlCustomers = "SELECT * FROM customers";
+    $resultCustomers = $conn->query($sqlCustomers);
+    if ($resultCustomers->num_rows > 0) {
+        echo '<table class="table"><tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Phone number</th><th>Package</th>
+            <th>Registration Date</th><th>Username</th><th>Password</th></tr>';
+        while ($row = $resultCustomers->fetch_assoc()) {
             echo "<tr><td>" . $row["id"] . "</td><td>" . $row["fname"] . "</td> <td>" . $row["lname"]
                 . "</td><td>" . $row["phone_number"] . "</td><td>" . $row["payment_id"]
                 . "</td><td>" . $row["registration_date"] . "</td>
-            <td>" . $row["uname"] . "</td><td>" . $row["passw"] . "</td></tr>";
+            <td>" . $row["uname"] . "</td><td>" . $row["passw"] . '</td><td><button class="button" onclick="getCustomerById('. intval($row["id"]) .')">edit</button></td></tr>';
         }
         echo "</table>";
     } else {
@@ -78,16 +81,17 @@ if ($result->num_rows > 0) {
     }
     ?>
 </div>
-
-<div class="checkStaff">
+<p id="testing"></p>
+<div id="checkStaff">
     <?php
-    $sql = "SELECT * FROM staff";
-    $result = $conn->query($sql);
-    if ($result->num_rows > 0) {
+    $sqlStaff = "SELECT * FROM staff";
+    $resultStaff = $conn->query($sqlStaff);
+    if ($resultStaff->num_rows > 0) {
         echo '<table class="table"><tr><th>ID</th><th>Name</th><th>Profession</th><th>Salary</th><th>Password</th></tr>';
-        while ($row = $result->fetch_assoc()) {
+        while ($row = $resultStaff->fetch_assoc()) {
             echo "<tr><td>" . $row["id"] . "</td><td>" . $row["name"] . "</td> <td>" . $row["profession"]
-                . "</td><td>" . $row["salary"] . "</td><td>" . $row["password"] . "</td></tr>";
+                . "</td><td>" . $row["salary"] . "</td><td>" . $row["password"] .
+                '</td><td><button class="button" onclick="getStaffById('. intval($row["id"]) .')">edit</button></td></tr>';
         }
         echo "</table>";
     } else {
@@ -113,36 +117,106 @@ if ($result->num_rows > 0) {
     ?>
 </div>
 
-<script>
-    let change = false;
-    let changeMessages = false;
-    document.getElementById("checkCustomers").style.display = "none";
+
+
+<div id="popUp"></div>
+
+
+<script type="text/javascript">
+    if (localStorage.getItem("change") === null){
+        localStorage.setItem("change","show")
+    }
+    if (localStorage.getItem("changeMessages") === null){
+        localStorage.setItem("changeMessages","show")
+    }
+    if (localStorage.getItem("changeStaff") === null){
+        localStorage.setItem("changeStaff","show")
+    }
+
+    let change=false;
+    if (localStorage.getItem("change")==="show"){
+        change=true;
+    }
+    let changeMessages=false;
+    if (localStorage.getItem("changeMessages")==="show"){
+        changeMessages=true;
+    }
+    let changeStaff=false;
+    if (localStorage.getItem("changeStaff")==="show"){
+        changeStaff=true;
+    }
+
+
+    if(!change){
+        document.getElementById("checkCustomers").style.display = "none";
+    }
+    if(!changeMessages){
+        document.getElementById("messageDisplay").style.display = "none";
+    }
+    if(!changeStaff){
+        document.getElementById("checkStaff").style.display = "none";
+    }
+
     document.getElementById("readCustomersButton").onclick = function () {
-        changeDisplay()
+        change=changeDisplay(change,"checkCustomers");
+        if (localStorage.getItem("change")==="show"){
+            localStorage.setItem("change","noShow")
+        }
+        else {
+            localStorage.setItem("change","show")
+        }
     };
 
-    document.getElementById("messageDisplay").style.display = "none";
     document.getElementById("readMessages").onclick = function () {
-        changeDisplayMessages()
+        changeMessages=changeDisplay(changeMessages,"messageDisplay");
+        if (localStorage.getItem("changeMessages")==="show"){
+            localStorage.setItem("changeMessages","noShow")
+        }
+        else {
+            localStorage.setItem("changeMessages","show")
+        }
     };
 
-    function changeDisplay() {
+    document.getElementById("readStaff").onclick = function () {
+        changeStaff=changeDisplay(changeStaff,"checkStaff");
+        if (localStorage.getItem("changeStaff")==="show"){
+            localStorage.setItem("changeStaff","noShow")
+        }
+        else {
+            localStorage.setItem("changeStaff","show")
+        }
+    };
+
+    function changeDisplay(change,container) {
         change = !change;
         if (change) {
-            document.getElementById("checkCustomers").style.display = "initial";
+            document.getElementById(container).style.display = "initial";
         } else {
-            document.getElementById("checkCustomers").style.display = "none";
+            document.getElementById(container).style.display = "none";
         }
+        return change;
     }
 
-    function changeDisplayMessages() {
-        changeMessages = !changeMessages;
-        if (changeMessages) {
-            document.getElementById("messageDisplay").style.display = "initial";
-        } else {
-            document.getElementById("messageDisplay").style.display = "none";
-        }
+    function getStaffById(number){
+        $.ajax({
+            type: "POST",
+            url: "fetch_staff.php",
+            data: {id: number},
+            dataType: 'html',
+            success: function(response) { $('#popUp').html(response); }
+        });
     }
+
+    function getCustomerById(number){
+        $.ajax({
+            type: "POST",
+            url: "fetch_customer.php",
+            data: {id: number},
+            dataType: 'html',
+            success: function(response) { $('#popUp').html(response); }
+        });
+    }
+
 </script>
 </body>
 </html>
