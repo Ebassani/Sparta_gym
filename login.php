@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="Css/project1.css">
     <link rel="stylesheet" href="Css/CssStyling.css">
 </head>
+
 <body class="loginBody">
 <?php
 include "header.php";
@@ -16,10 +17,10 @@ include "header.php";
 <div class="login1">
     <div class="loginDiv">
         <form class="login" id="login" method="post">
-            <label for="unameCus">Username:</label><br>
-            <input type="text" id="unameCus" name="unameCus"><br>
-            <label for="passw">Password:</label><br>
-            <input type="password" id="passw" name="passw" ><br>
+            <label for="unameCus">Username:</label>
+            <input type="text" id="unameCus" name="unameCus">
+            <label for="passw">Password:</label>
+            <input type="password" id="passw" name="passw" >
             <input type="submit" value="Submit">
         </form>
         <button id="loginSwitch">Click to Join as a staff member</button>
