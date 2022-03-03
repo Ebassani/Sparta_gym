@@ -96,143 +96,149 @@ include "header.php";
                 <img class="openimg" src="images/openimg.png" alt="Openimg">
             </div>
         </div>
-    <div class="JoinUsForm">
-        <button class="joinUsButton" id="joinUsButton">Click to Join as a staff member</button><br><br>
+        <div class="JoinUsForm">
+            <button class="joinUsButton" id="joinUsButton">Click to Join as a staff member</button>
+            <br><br>
 
-        <form class="formJoin" id="formJoin" method="post">
+            <form class="formJoin" id="formJoin" method="post">
 
-            <label for="fname"><b>First name:</b></label><input type="text" id="fname" name="fname" required>
+                <label for="fname"><b>First name:</b></label><input type="text" id="fname" name="fname" required>
 
-            <label for="lname"><b>Last name:</b></label><input type="text" id="lname" name="lname" required>
+                <label for="lname"><b>Last name:</b></label><input type="text" id="lname" name="lname" required>
 
-            <label for="uname"><b>Username:</b></label><input type="text" id="uname" name="uname" required>
+                <label for="uname"><b>Username:</b></label><input type="text" id="uname" name="uname" required>
 
-            <label for="passw"><b>Password:</b></label><input type="text" id="passw" name="passw" required>
+                <label for="passw"><b>Password:</b></label><input type="text" id="passw" name="passw" required>
 
-            <label for="phone_number"><b>phone_number:</b></label><input type="text" id="phone_number" name="phone_number" required>
+                <label for="phone_number"><b>phone_number:</b></label><input type="text" id="phone_number"
+                                                                             name="phone_number" required>
 
-            Package:
-            &nbsp;<select name="package_name">
-                <option value=1 >Monthly </option>
-                <option value=2>Seasonal</option>
-                <option value=3> Yearly </option>
-            </select> 
-         <input class="SendFormButton" type="submit" value="Send form" formaction="createcustomer.php">
+                Package:
+                &nbsp;<select name="package_name">
+                    <option value=1>Monthly</option>
+                    <option value=2>Seasonal</option>
+                    <option value=3> Yearly</option>
+                </select>
+                <input class="SendFormButton" type="submit" value="Send form" formaction="createcustomer.php">
+            </form>
+        </div>
+    </div>
+
+    <div class="after_middle">
+
+        <h1 style="text-align: center; padding-top: 1em; color: snow;"><b>Where to find us</b></h1>
+
+        <div class="flex-conainer">
+            <p><br></p>
+            <div class="hameenlinna">
+                <div>
+                    <a href="https://www.google.com/maps/place/Visamäentie+25,+13100+Hämeenlinna/@60.9809433,24.4652459,15z/data=!4m5!3m4!1s0x468e5d82758189e1:0xaae076d18a3ee01!8m2!3d60.980737!4d24.4750114"><img
+                                class="img_hml" src="images/hmlmap.jpg" alt="hmlmap"></a>
+                </div>
+                <div class="hmltext">
+                    <h2><b>Sparta Gym Hämeenlinna</b></h2>
+                    <h4 style="margin-top: 1em;">Sparta Gym is well known for having one of the largest group exercise
+                        studios in Finland, that can accommodate well over a hundred exercises. There are also have two
+                        squash courts for the use of our members.</h4>
+                </div>
+            </div>
+
+            <div class="hamk">
+                <div class="hamktext">
+                    <h2><b>Sparta Gym HAMK</b></h2>
+                    <h4 style="margin-top: 1em;">Sparta Gym HAMK continues to provide high-quality exercise facilities,
+                        personal training services for all kinds of exercises, and over 70 group fitness classes weekly
+                        to
+                        choose from!</h4>
+                </div>
+                <div>
+                    <a href="https://www.google.com/maps/place/Visamäentie+25,+13100+Hämeenlinna/@60.9809433,24.4652459,15z/data=!4m5!3m4!1s0x468e5d82758189e1:0xaae076d18a3ee01!8m2!3d60.980737!4d24.4750114"><img
+                                class="img_hamk" src="images/hamkmap.jpg" alt="hamkmap"></a>
+                </div>
+            </div>
+
+            <div class="tre">
+                <div>
+                    <a href="https://www.google.com/maps/place/Rautatienkatu+25,+33100+Tampere/@61.4988947,23.7708341,17z/data=!3m1!4b1!4m5!3m4!1s0x468edf327e8f00b3:0x60b4c1089733abec!8m2!3d61.4988947!4d23.7730228"><img
+                                class="img_tre" src="images/tremap.jpg" alt="tremap"></a>
+                </div>
+                <div class="tretext">
+                    <h2><b>Sparta Gym Tampere</b></h2>
+                    <h4 style="margin-top: 1em;">Sparta Gym Tampere is located in the heart of Tampere CITY center and
+                        is
+                        the second-largest Sparta Gym with 2000m² of fitness space including two large group exercise
+                        studios.</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contactInfo">
+        <h1 class="textInfo"><b>Contact Info</b></h1>
+        <div class="flex-container">
+            <div class="info">
+                <div class="textWithInfo">
+                    <img class="icon2" src="images/telephone.png" alt="">
+                    <p style="padding-top: 2em;">Phone number:<br>
+                        +358 51 999769638 (24/7 for every branch)<br>
+                        +358 41 682567721 (Sparta Gym Hämeenlinna)<br>
+                        +358 44 468515516 (Sparta Gym HAMK)<br>
+                        +358 99 218188337 (Sparta Gym Tampere)<br>
+                        <br>
+
+                        Email:<br>
+                        spartagym@gym.com</p>
+                </div>
+                <div class="socialMedia">
+                    <img class="icon1" src="images/spartan.png" alt="">
+                    <p style="padding-top: 2em;">You can also follow us on social media:</p>
+                    <div class="instagram">
+                        <a href="https://www.instagram.com"><img class="instagramImg" src="images/instagram.png"
+                                                                 alt="instagramImg"></a>
+                        <a href="https://www.instagram.com"><p style="padding-top: 1em;padding-left: 1em;">Instagram</p>
+                        </a>
+                    </div>
+                    <div class="facebook">
+                        <a href="https://www.facebook.com"><img class="facebookImg" src="images/facebook.png"
+                                                                alt="facebookImg"></a>
+                        <a href="https://www.facebook.com"><p style="padding-top: 1em;padding-left: 1em;">Facebook</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            var switchForm = true;
+            document.getElementById("joinUsButton").onclick = function () {
+                newForm()
+            };
+
+            function newForm() {
+                if (switchForm) {
+                    document.getElementById("joinUsButton").innerHTML = "Click to Join as a customer";
+                    document.getElementById("formJoin").innerHTML = '<form class="formJoinstf" id="formJoinstf" method="post"> <label for="name">full name:</label><input type="text" id="name" name="name" required><label for="password">Password:</label><input type="text" id="password" name="password" required>Profession: <select name="profession"> <option value="Personal Trainer">Personal Trainer </option> <option value="Receptionist"> Receptionist</option> <option value="Manager "> Manager </option> <option value="Cleaner"> Cleaner </option> </select> <input type="submit" value="Submit" formaction="createstaff.php"> </form>';
+                } else {
+                    document.getElementById("joinUsButton").innerHTML = "Click to Join as a staff member";
+                    document.getElementById("formJoin").innerHTML = '<form class="formJoin" id="formJoin" method="post"> <label for="fname"><b>First name:</b></label><input type="text" id="fname" name="fname" required> <label for="lname"><b>Last name:</b></label><input type="text" id="lname" name="lname" required> <label for="uname"><b>Username:</b></label><input type="text" id="uname" name="uname" required> <label for="passw"><b>Password:</b></label><input type="text" id="passw" name="passw" required> <label for="phone_number"><b>phone_number:</b></label><input type="text" id="phone_number" name="phone_number" required> Package: &nbsp;<select name="package_name"> <option value="Monthly">Monthly </option> <option value="Seasonal">Seasonal</option> <option value=" Yearly "> Yearly </option> </select> <input class="SendFormButton" type="submit" value="Send form" formaction="createcustomer.php"> </form>';
+                }
+                switchForm = !switchForm;
+            };
+        </script>
+
+        <p>Contact us!</p>
+        <form id="contact" action="db.php">
+            First name: <input type="text" name="fname"><br>
+            Last name: <input type="text" name="lname"><br><br>
+            Email: <input type="text" name="email"><br><br>
+            Phone: <input type="text" name="phone"><br><br>
+            <input type="button" onclick="contactform()" value="Submit">
         </form>
-    </div>
-</div>
 
-<div class="after_middle">
-
-    <h1 style="text-align: center; padding-top: 1em; color: snow;"><b>Where to find us</b></h1>
-
-    <div class="flex-conainer">
-        <p><br></p>
-        <div class="hameenlinna">
-            <div>
-                <a href="https://www.google.com/maps/place/Visamäentie+25,+13100+Hämeenlinna/@60.9809433,24.4652459,15z/data=!4m5!3m4!1s0x468e5d82758189e1:0xaae076d18a3ee01!8m2!3d60.980737!4d24.4750114"><img
-                            class="img_hml" src="images/hmlmap.jpg" alt="hmlmap"></a>
-            </div>
-            <div class="hmltext">
-                <h2><b>Sparta Gym Hämeenlinna</b></h2>
-                <h4 style="margin-top: 1em;">Sparta Gym is well known for having one of the largest group exercise
-                    studios in Finland, that can accommodate well over a hundred exercises. There are also have two
-                    squash courts for the use of our members.</h4>
-            </div>
-        </div>
-
-        <div class="hamk">
-            <div class="hamktext">
-                <h2><b>Sparta Gym HAMK</b></h2>
-                <h4 style="margin-top: 1em;">Sparta Gym HAMK continues to provide high-quality exercise facilities,
-                    personal training services for all kinds of exercises, and over 70 group fitness classes weekly to
-                    choose from!</h4>
-            </div>
-            <div>
-                <a href="https://www.google.com/maps/place/Visamäentie+25,+13100+Hämeenlinna/@60.9809433,24.4652459,15z/data=!4m5!3m4!1s0x468e5d82758189e1:0xaae076d18a3ee01!8m2!3d60.980737!4d24.4750114"><img
-                            class="img_hamk" src="images/hamkmap.jpg" alt="hamkmap"></a>
-            </div>
-        </div>
-
-        <div class="tre">
-            <div>
-                <a href="https://www.google.com/maps/place/Rautatienkatu+25,+33100+Tampere/@61.4988947,23.7708341,17z/data=!3m1!4b1!4m5!3m4!1s0x468edf327e8f00b3:0x60b4c1089733abec!8m2!3d61.4988947!4d23.7730228"><img
-                            class="img_tre" src="images/tremap.jpg" alt="tremap"></a>
-            </div>
-            <div class="tretext">
-                <h2><b>Sparta Gym Tampere</b></h2>
-                <h4 style="margin-top: 1em;">Sparta Gym Tampere is located in the heart of Tampere CITY center and is
-                    the second-largest Sparta Gym with 2000m² of fitness space including two large group exercise
-                    studios.</h4>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="contactInfo">
-    <h1 class="textInfo"><b>Contact Info</b></h1>
-    <div class="flex-container">
-        <div class="info">
-            <div class="textWithInfo">
-                <img class="icon2" src="images/telephone.png" alt="">
-                <p style="padding-top: 2em;">Phone number:<br>
-                    +358 51 999769638 (24/7 for every branch)<br>
-                    +358 41 682567721 (Sparta Gym Hämeenlinna)<br>
-                    +358 44 468515516 (Sparta Gym HAMK)<br>
-                    +358 99 218188337 (Sparta Gym Tampere)<br>
-                    <br>
-
-                    Email:<br>
-                    spartagym@gym.com</p>
-            </div>
-            <div class="socialMedia">
-                <img class="icon1" src="images/spartan.png" alt="">
-                <p style="padding-top: 2em;">You can also follow us on social media:</p>
-                <div class="instagram">
-                    <a href="https://www.instagram.com"><img class="instagramImg" src="images/instagram.png"
-                                                             alt="instagramImg"></a>
-                    <a href="https://www.instagram.com"><p style="padding-top: 1em;padding-left: 1em;">Instagram</p></a>
-                </div>
-                <div class="facebook">
-                    <a href="https://www.facebook.com"><img class="facebookImg" src="images/facebook.png"
-                                                            alt="facebookImg"></a>
-                    <a href="https://www.facebook.com"><p style="padding-top: 1em;padding-left: 1em;">Facebook</p></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script>
-        var switchForm = true;
-        document.getElementById("joinUsButton").onclick = function() {
-            newForm()
-        };
-
-        function newForm() {
-            if (switchForm) {
-                document.getElementById("joinUsButton").innerHTML = "Click to Join as a customer";
-                document.getElementById("formJoin").innerHTML = '<form class="formJoinstf" id="formJoinstf" method="post"> <label for="name">full name:</label><input type="text" id="name" name="name" required><label for="password">Password:</label><input type="text" id="password" name="password" required>Profession: <select name="profession"> <option value="Personal Trainer">Personal Trainer </option> <option value="Receptionist"> Receptionist</option> <option value="Manager "> Manager </option> <option value="Cleaner"> Cleaner </option> </select> <input type="submit" value="Submit" formaction="createstaff.php"> </form>';
-            } else {
-                document.getElementById("joinUsButton").innerHTML = "Click to Join as a staff member";
-                document.getElementById("formJoin").innerHTML = '<form class="formJoin" id="formJoin" method="post"> <label for="fname"><b>First name:</b></label><input type="text" id="fname" name="fname" required> <label for="lname"><b>Last name:</b></label><input type="text" id="lname" name="lname" required> <label for="uname"><b>Username:</b></label><input type="text" id="uname" name="uname" required> <label for="passw"><b>Password:</b></label><input type="text" id="passw" name="passw" required> <label for="phone_number"><b>phone_number:</b></label><input type="text" id="phone_number" name="phone_number" required> Package: &nbsp;<select name="package_name"> <option value="Monthly">Monthly </option> <option value="Seasonal">Seasonal</option> <option value=" Yearly "> Yearly </option> </select> <input class="SendFormButton" type="submit" value="Send form" formaction="createcustomer.php"> </form>';
+        <script>
+            function contactform() {
+                document.getElementById("contact").submit();
             }
-            switchForm = !switchForm;
-        };
-    </script>
-
-<p>Contact us!</p>
-<form id="contact" action="db.php">
-    First name: <input type="text" name="fname"><br>
-    Last name: <input type="text" name="lname"><br><br>
-    Email: <input type="text" name="email"><br><br>
-    Phone: <input type="text" name="phone"><br><br>
-    <input type="button" onclick="contactform()" value="Submit">
-</form>
-
-<script>
-    function contactform() {
-        document.getElementById("contact").submit();
-    }
-</script>
+        </script>
 </body>
 
 </html>
