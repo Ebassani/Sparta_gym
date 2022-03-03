@@ -27,11 +27,11 @@ header {
   object-fit: cover;
 }
 
-.JoinUsForm{
+.JoinUsForm {
   background: #1f4161;
   color: snow;
   text-align: center;
-  padding-bottom: 10px;
+  padding-bottom: 100px;
 }
 
 .intro-container {
@@ -55,29 +55,29 @@ header {
   font-weight: bold;
 }
 .intro2 {
-    font-size: 3em;
-    font-weight: bold;
+  font-size: 3em;
+  font-weight: bold;
 }
-.introduction-container{
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    background: #1f4161;
-    color: snow;
-    font-size: 1.5em;
-    font-weight: lighter;
-    flex-wrap: wrap;
+.introduction-container {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  background: #1f4161;
+  color: snow;
+  font-size: 1.5em;
+  font-weight: lighter;
+  flex-wrap: wrap;
 }
-.txt1{
-    margin-top: 2em;
-    padding-left: 1em;
-    padding-right: 2em;
-    max-width: 500px;
+.txt1 {
+  margin-top: 2em;
+  padding-left: 1em;
+  padding-right: 2em;
+  max-width: 500px;
 }
-.txt2{
-    margin-top: 5em;
-    max-width: 500px;
-    padding-right: 1em;
-    padding-bottom: 2em;
-    padding-left: 1em;
+.txt2 {
+  margin-top: 5em;
+  max-width: 500px;
+  padding-right: 1em;
+  padding-bottom: 2em;
+  padding-left: 1em;
 }

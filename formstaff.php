@@ -1,17 +1,19 @@
 
-<form class="formJoinstf" id="formJoinstf" method="post" action="createstaff.php">
+<form class="formJoinstf" id="formJoinstf" method="post">
 
-        <label for="fnamestf">First name:</label><br>
-        <input type="text" id="fnamestf" name="fnamestf" required><br> 
+        <label for="name">full name:</label><br>
+        <input type="text" id="name" name="name" required><br> 
 
-        <label for="lnamestf">Last name:</label><br>
-        <input type="text" id="lnamestf" name="lnamestf" required><br> 
+        <label for="password">Password:</label><br> 
+        <input type="text" id="password" name="password" required><br> 
 
-        <label for="unamestf">Username:</label><br> 
-        <input type="text" id="unamestf" name="unamestf" required><br> 
+        Profession:<br>
+        <select name="profession"> 
+                <option value="Personal Trainer">Personal Trainer </option>
+                <option value="Receptionist"> Receptionist</option>
+                <option value="Manager "> Manager </option>
+                <option value="Cleaner"> Cleaner </option>
+        </select>
 
-        <label for="passwstf">Password:</label><br> 
-        <input type="text" id="passwstf" name="passwstf" required><br> 
-
-        <input type="submit" value="Submit">
+      <br>  <input type="submit" value="Submit" formaction="createstaff.php">
 </form>

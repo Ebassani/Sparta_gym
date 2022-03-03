@@ -10,6 +10,8 @@
     <title>Sparta Gym</title>
     <link rel="stylesheet" href="Css/project1.css">
     <link rel="stylesheet" href="Css/csshanna.css">
+    <link rel="stylesheet" href="Css/yasserstyling.css">
+
 </head>
 
 <body>
@@ -98,20 +100,33 @@
     </div>
 
     <div class="JoinUsForm">
-        <button id="joinUsButton">Click to Join as a staff member</button>
+        <button class="joinUsButton" id="joinUsButton">Click to Join as a staff member</button><br><br>
+
         <form class="formJoin" id="formJoin" method="post">
-            <label for="fname">First name:</label><br><input type="text" id="fname" name="fname" required><br>
-            <label for="lname">Last name:</label><br><input type="text" id="lname" name="lname" required><br>
-            <label for="uname">Username:</label><br><input type="text" id="uname" name="uname" required><br>
-            <label for="passw">Password:</label><br><input type="text" id="passw" name="passw" required><br>
-            <label for="phone_number">phone_number:</label><br><input type="text" id="phone_number" name="phone_number" required><br>
-            <input type="submit" value="Click to send form" formaction="createcustomer.php">
+
+            <label for="fname"><b>First name:</b></label><input type="text" id="fname" name="fname" required>
+
+            <label for="lname"><b>Last name:</b></label><input type="text" id="lname" name="lname" required>
+
+            <label for="uname"><b>Username:</b></label><input type="text" id="uname" name="uname" required>
+
+            <label for="passw"><b>Password:</b></label><input type="text" id="passw" name="passw" required>
+
+            <label for="phone_number"><b>phone_number:</b></label><input type="text" id="phone_number" name="phone_number" required>
+
+            Package:
+            &nbsp;<select name="package_name">
+                <option value=1 >Monthly </option>
+                <option value=2>Seasonal</option>
+                <option value=3> Yearly </option>
+            </select> 
+         <input class="SendFormButton" type="submit" value="Send form" formaction="createcustomer.php">
         </form>
     </div>
 
     <div class="after_middle">
 
-        <h1 style="text-align: center; padding-top: 1em; color: snow;"><b>Where to find us</b></h1>
+        <h1 style="text-align: center; padding-top: 1em;color: snow;"><b>Where to find us</b></h1>
 
         <div class="flex-conainer">
             <p><br></p>
@@ -192,10 +207,10 @@
         function newForm() {
             if (switchForm) {
                 document.getElementById("joinUsButton").innerHTML = "Click to Join as a customer";
-                document.getElementById("formJoin").innerHTML = '<form class="formJoinstf" id="formJoinstf" method="post" action="createstaff.php"> <label for="fnamestf">First name:</label><br> <input type="text" id="fnamestf" name="fnamestf" required><br> <label for="lnamestf">Last name:</label><br> <input type="text" id="lnamestf" name="lnamestf" required><br> <label for="unamestf">Username:</label><br> <input type="text" id="unamestf" name="unamestf" required><br> <label for="passwstf">Password:</label><br> <input type="text" id="passwstf" name="passwstf" required><br> <input type="submit" value="Submit" formaction="createstaff.php"> </form>';
+                document.getElementById("formJoin").innerHTML = '<form class="formJoinstf" id="formJoinstf" method="post"> <label for="name">full name:</label><input type="text" id="name" name="name" required><label for="password">Password:</label><input type="text" id="password" name="password" required>Profession: <select name="profession"> <option value="Personal Trainer">Personal Trainer </option> <option value="Receptionist"> Receptionist</option> <option value="Manager "> Manager </option> <option value="Cleaner"> Cleaner </option> </select> <input type="submit" value="Submit" formaction="createstaff.php"> </form>';
             } else {
                 document.getElementById("joinUsButton").innerHTML = "Click to Join as a staff member";
-                document.getElementById("formJoin").innerHTML = '<form class="formJoin" id="formJoin" method="post"> <label for="fname">First name:</label><br><input type="text" id="fname" name="fname" required><br> <label for="lname">Last name:</label><br><input type="text" id="lname" name="lname" required><br> <label for="uname">Username:</label><br><input type="text" id="uname" name="uname" required><br> <label for="passw">Password:</label><br><input type="text" id="passw" name="passw" required><br> <label for="phone_number">phone_number:</label><br><input type="text" id="phone_number" name="phone_number" required><br> <input type="submit" value="Click to send form" formaction="createcustomer.php"> </form>';
+                document.getElementById("formJoin").innerHTML = '<form class="formJoin" id="formJoin" method="post"> <label for="fname"><b>First name:</b></label><input type="text" id="fname" name="fname" required> <label for="lname"><b>Last name:</b></label><input type="text" id="lname" name="lname" required> <label for="uname"><b>Username:</b></label><input type="text" id="uname" name="uname" required> <label for="passw"><b>Password:</b></label><input type="text" id="passw" name="passw" required> <label for="phone_number"><b>phone_number:</b></label><input type="text" id="phone_number" name="phone_number" required> Package: &nbsp;<select name="package_name"> <option value="Monthly">Monthly </option> <option value="Seasonal">Seasonal</option> <option value=" Yearly "> Yearly </option> </select> <input class="SendFormButton" type="submit" value="Send form" formaction="createcustomer.php"> </form>';
             }
             switchForm = !switchForm;
         };
