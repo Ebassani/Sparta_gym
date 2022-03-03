@@ -1,0 +1,56 @@
+.formJoin {
+  height: 25em;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 20px 5px;
+}
+.joinUsButton {
+  height: 3em;
+  width: 30em;
+  background-image: linear-gradient(to right,rgb(255, 81, 0), rgb(192, 105, 24) , yellow);
+  border-radius: 15px;
+  font-weight: bolder;
+  font-size: 1em;
+}
+.SendFormButton {
+  width: 48%;
+  height: 3em;
+  grid-column: 2/3;
+  background-image: linear-gradient(to right,rgb(255, 81, 0), rgb(192, 105, 24) , yellow);
+  border-radius: 15px;
+  font-weight: bolder;
+  font-size: 1em;
+}
+@media only screen and (max-width: 600px) {
+  .formJoin {
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr ;
+    grid-template-areas:
+      "fname"
+      "lname"
+      "uname"
+      "passw"
+      "phone_number"
+      "package_name";
+    grid-gap: 10px 5px;
+  }
+  .SendFormButton {
+    width: 48%;
+    height: 3em;
+    grid-column: 2/3;
+  }
+  .joinUsButton {
+    height: 3em;
+    width: 15em;
+  }
+}
+.formJoinstf{
+  height: 25em;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 20px 5px;
+}
+ 
+/* another color that fits for the buttons : # 415466*/
