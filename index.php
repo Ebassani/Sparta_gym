@@ -204,6 +204,25 @@ include "header.php";
                         <a href="https://www.facebook.com"><p style="padding-top: 1em;padding-left: 1em;">Facebook</p>
                         </a>
                     </div>
+                    </div>
+        <div class="ContactUsForm">
+        
+
+            <form class="formContact" id="formContact" method="post">
+
+                <label for="fname"><b>First name:</b></label><input type="text" id="fname" name="fname" required>
+
+                <label for="lname"><b>Last name:</b></label><input type="text" id="lname" name="lname" required>
+
+                <label for="email"><b>Email:</b></label><input type="text" id="email" name="email" required>
+
+                <label for="message"><b>Message:</b></label><input type="text" id="message" name="message" required>
+
+              
+                                                                          <input class="SendCFormButton" type="submit" value="Send form" formaction="contact.php">
+            </form>
+        </div>
+    </div>
                 </div>
             </div>
         </div>
@@ -223,22 +242,7 @@ include "header.php";
                 }
                 switchForm = !switchForm;
             };
-        </script>
 
-        <p>Contact us!</p>
-        <form id="contact" action="db.php">
-            First name: <input type="text" name="fname"><br>
-            Last name: <input type="text" name="lname"><br><br>
-            Email: <input type="text" name="email"><br><br>
-            Phone: <input type="text" name="phone"><br><br>
-            <input type="button" onclick="contactform()" value="Submit">
-        </form>
-
-        <script>
-            function contactform() {
-                document.getElementById("contact").submit();
-            }
-        </script>
 </body>
 
 </html>

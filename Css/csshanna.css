@@ -124,3 +124,34 @@
     padding-top: 2em;
     padding-bottom: 2em;
 }
+
+.formContact {
+    height: 25em;
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 20px 5px;
+  }
+
+  .SendCFormButton {
+    width: 48%;
+    height: 3em;
+    grid-column: 2/3;
+    background-image: linear-gradient(to right,rgb(255, 81, 0), rgb(192, 105, 24) , yellow);
+    border-radius: 15px;
+    font-weight: bolder;
+    font-size: 1em;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .formContact {
+      grid-template-columns: 0.5fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr ;
+      grid-template-areas:
+        "fname"
+        "lname"
+        "email"
+        "message";
+      grid-gap: 10px 5px;
+}
+
