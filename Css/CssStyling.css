@@ -12,10 +12,8 @@ img {
 }
 
 .middle_part {
-    background: url("../images/Background_middle_part.jpg");
     font-family: 'Spartan', sans-serif;
-    background-position: center right;
-    background-repeat: no-repeat;
+    background: url("../images/Background_middle_part.jpg") no-repeat center right;
     background-size: cover;
 }
 
@@ -219,7 +217,7 @@ a:hover {
     color: snow;
 }
 
-.login1{
+.login1 {
     height: 100%;
     display: flex;
     justify-content: center;
@@ -229,25 +227,129 @@ a:hover {
 .loginBody {
     margin: 0;
     padding: 0;
-    background: aqua;
+    background: url("../images/sven-mieke-MsCgmHuirDo-unsplash.jpg");
+    background-size: cover;
     height: 100vh;
     min-height: 400px;
     display: flex;
     flex-direction: column;
 }
 
-.loginDiv{
+.loginDiv {
     margin: 0 auto;
     background: #1f4161;
     padding: 2em;
     border-radius: 10px;
     box-shadow: 2px 2px 2px 2px;
     justify-content: center;
-    max-height: 50vw;
-    max-width: 50vw;
+    max-height: 500px;
+    max-width: 300px;
     flex-grow: 1;
 }
 
-.hidden{
+.login {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    line-height: 2;
+}
+
+.hidden {
     display: none;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.button1 {
+
+    border: 1px solid rgba(27, 31, 35, .15);
+    border-radius: 6px;
+    box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 20px;
+    padding: 6px 16px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    white-space: nowrap;
+    max-width: 500px;
+}
+
+.buttonGray:hover {
+    background-color: lightgrey;
+}
+
+.buttonGray{
+    background-color: snow;
+    color: black;
+}
+
+.buttonBlue:hover {
+    background-color: #081d30;
+}
+
+.buttonBlue{
+    color: snow;
+    background-color: #1F4161;
+}
+
+#loginSwitch{
+    margin-right: 0;
+    right: 0;
+}
+
+.border{
+    background: #1f4161;
+    border-left: 0;
+    color: snow;
+    border-right: 0;
+    border-top: 0;
+    border-color: black;
+    font-size: larger;
+    margin-bottom: 1em;
+}
+
+.page1 {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pageBody {
+    margin: 0;
+    padding: 0;
+    background: url("../images/sven-mieke-MsCgmHuirDo-unsplash.jpg");
+    background-size: cover;
+    height: 100vh;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.pageDiv {
+    margin: 0 auto;
+    background: #1f4161;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px;
+    justify-content: center;
+    max-height: 500px;
+    max-width: 300px;
+    flex-grow: 1;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    line-height: 2;
 }
