@@ -312,7 +312,6 @@ a:hover {
     color: snow;
     border-right: 0;
     border-top: 0;
-    border-color: black;
     font-size: larger;
     margin-bottom: 1em;
 }
@@ -333,6 +332,8 @@ a:hover {
     min-height: 400px;
     display: flex;
     flex-direction: column;
+    color: snow;
+
 }
 
 .pageDiv {
@@ -340,10 +341,10 @@ a:hover {
     background: #1f4161;
     padding: 2em;
     border-radius: 10px;
-    box-shadow: 2px 2px 2px 2px;
+    box-shadow: black 2px 2px 2px 2px;
     justify-content: center;
     max-height: 500px;
-    max-width: 300px;
+    max-width: 800px;
     flex-grow: 1;
 }
 
@@ -352,4 +353,14 @@ a:hover {
     flex-direction: column;
     flex-wrap: wrap;
     line-height: 2;
+}
+
+.infoCus{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.infoRow{
+    padding: 1em 1em 1em 1em;
 }

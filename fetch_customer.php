@@ -14,9 +14,7 @@ $id = $_POST['id'];
     ?>
     <h2>Update Data</h2>
     <form method="post" action="update_customer.php">
-        <label>
-            <input name="id" style="display: none" value="<?php echo $row['id']; ?>">
-        </label>
+        <input name="id" type="hidden" value="<?php echo $row['id']; ?>">
         First Name: <br>
         <label>
             <input type="text" name="fname" value="<?php echo $row['fname']; ?>">
@@ -30,6 +28,11 @@ $id = $_POST['id'];
         Phone Number:<br>
         <label>
             <input type="text" name="phone_number" value="<?php echo $row['phone_number']; ?>">
+        </label>
+        <br>
+        Password:<br>
+        <label>
+            <input type="text" name="password" value="<?php echo $row['passw']; ?>">
         </label>
         <br>
         Subscription package:<br>
@@ -50,13 +53,9 @@ $id = $_POST['id'];
             </select>
         </label>
         <br>
-        Password:<br>
-        <label>
-            <input type="text" name="password" value="<?php echo $row['passw']; ?>">
-        </label>
-        <br>
         <input type="submit" name="submit" value="Submit">
         <button type="button" id="cancelButton" onclick="cancelPopUp()" class="button">Cancel</button>
+        <button id="deleteButton" formaction="deleteCustomer.php">Delete</button>
     </form>
 </div>
 

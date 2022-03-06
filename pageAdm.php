@@ -67,15 +67,17 @@ if ($result->num_rows > 0) {
     $sqlCustomers = "SELECT * FROM customers";
     $resultCustomers = $conn->query($sqlCustomers);
     if ($resultCustomers->num_rows > 0) {
-        echo '<table class="table"><tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Phone number</th><th>Package</th>
-            <th>Registration Date</th><th>Username</th><th>Password</th></tr>';
         while ($row = $resultCustomers->fetch_assoc()) {
-            echo "<tr><td>" . $row["id"] . "</td><td>" . $row["fname"] . "</td> <td>" . $row["lname"]
-                . "</td><td>" . $row["phone_number"] . "</td><td>" . $row["payment_id"]
-                . "</td><td>" . $row["registration_date"] . "</td>
-            <td>" . $row["uname"] . "</td><td>" . $row["passw"] . '</td><td><button class="button" onclick="getCustomerById('. intval($row["id"]) .')">edit</button></td></tr>';
+            echo "<div class='infoCus flex-container'><div class='column'><h4><b>ID</b></h4><p>" . $row["id"] .
+                "</p></div><div class='column'><h4><b>First Name</b></h4><p>" . $row["fname"] .
+                "</p></div><div class='column'><h4><b>Last Name</b></h4><p>" . $row["lname"] .
+                "</h5></div><div class='column'><h4><b>Phone Number</b></h4><p>" . $row["phone_number"] .
+                "</p></div><div class='column'><h4><b>Payment id</b></h4><p>" . $row["payment_id"] .
+                "</p></div><div class='column'><h4><b>Registration Date</b></h4><p>" . $row["registration_date"] .
+                "</p></div><div class='column'><h4><b>Username</b></h4><p>" . $row["uname"] .
+                "</p></div><div class='column'><h4><b>Password</b></h4><p>" . $row["passw"] .
+                '</p></div><button class="button" onclick="getCustomerById('. intval($row["id"]) .')">edit</button></div>';
         }
-        echo "</table>";
     } else {
         echo "no results";
     }

@@ -36,56 +36,61 @@ if ($count != 1) {
     header("location:login.php");
     exit();
 }
-
-$obj = $result->fetch_object();
-$name = $obj->name;
-echo "<br><h1>Welcome $name</h1><br>";
-
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-    echo '<table class=\"table\"><tr><th>ID</th><th>Name</th><th>Profession</th><th>Salary</th></tr>';
-    while ($row = $result->fetch_assoc()) {
-        echo "<tr><td>" . $row["id"] . "</td><td>" . $row["name"] . "</td> <td>" . $row["profession"]
-            . "</td><td>" . $row["salary"] . "</td></tr>";
-    }
-    echo "</table>";
-} else {
-    echo "no results";
-}
 ?>
-<a href="logOut.php">
-    <button class="pageButton" id="logOutButton">Log Out</button>
-</a>
+<div>
+    <div>
+        <?php
+        $obj = $result->fetch_object();
+        $name = $obj->name;
+        echo "<br><h1>Welcome $name</h1><br>";
 
-<button class="pageButton" id="updateButton">Change Name</button>
-<button class="pageButton" id="readMessages">Read Messages</button>
-
-<?php
-$result = mysqli_query($conn, "SELECT name FROM staff WHERE id= '$staffId'");
-$row = mysqli_fetch_array($result);
-?>
-<div id="nameChangeStaff">
-    <form method="post" action="">
-        Name:<br><input type="text" name="name" value="<?php echo $row['name']; ?>"><br>
-        <input type="submit" value="Save change">
-    </form>
-</div>
-
-<div id="messageDisplay">
-    <?php
-    $sql = "SELECT * FROM message";
-    $result = $conn->query($sql);
-    if ($result->num_rows > 0) {
-        echo '<table class="table"><tr><th>Name</th><th>Email</th><th>Message</th></tr>';
-        while ($row = $result->fetch_assoc()) {
-            echo "<tr><td>" . $row["name"] . "</td><td>" . $row["email"] . "</td>
-            <td>". $row["message"] ."</td></tr>";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            echo '<table class=\"table\"><tr><th>ID</th><th>Name</th><th>Profession</th><th>Salary</th></tr>';
+            while ($row = $result->fetch_assoc()) {
+                echo "<tr><td>" . $row["id"] . "</td><td>" . $row["name"] . "</td> <td>" . $row["profession"]
+                    . "</td><td>" . $row["salary"] . "</td></tr>";
+            }
+            echo "</table>";
+        } else {
+            echo "no results";
         }
-        echo "</table>";
-    } else {
-        echo "no messages";
-    }
-    ?>
+        ?>
+        <a href="logOut.php">
+            <button class="pageButton" id="logOutButton">Log Out</button>
+        </a>
+
+        <button class="pageButton" id="updateButton">Change Name</button>
+        <button class="pageButton" id="readMessages">Read Messages</button>
+
+        <?php
+        $result = mysqli_query($conn, "SELECT name FROM staff WHERE id= '$staffId'");
+        $row = mysqli_fetch_array($result);
+        ?>
+        <div id="nameChangeStaff">
+            <form method="post" action="">
+                Name:<br><input type="text" name="name" value="<?php echo $row['name']; ?>"><br>
+                <input type="submit" value="Save change">
+            </form>
+        </div>
+
+        <div id="messageDisplay">
+            <?php
+            $sql = "SELECT * FROM message";
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+                echo '<table class="table"><tr><th>Name</th><th>Email</th><th>Message</th></tr>';
+                while ($row = $result->fetch_assoc()) {
+                    echo "<tr><td>" . $row["name"] . "</td><td>" . $row["email"] . "</td>
+            <td>" . $row["message"] . "</td></tr>";
+                }
+                echo "</table>";
+            } else {
+                echo "no messages";
+            }
+            ?>
+        </div>
+    </div>
 </div>
 
 <?php

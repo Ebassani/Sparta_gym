@@ -48,14 +48,17 @@ if ($count != 1) {
         <?php
 
         if ($result->num_rows > 0) {
-            echo '<table class="table"><tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Phone number</th><th>Package</th><th>Registration Date</th><th>Username</th></tr>';
+            echo '<div class="infoCus flex-container">';
             while ($row = $result->fetch_assoc()) {
-                echo "<tr><td>" . $row["id"] . "</td><td>" . $row["fname"] . "</td> <td>" . $row["lname"]
-                    . "</td><td>" . $row["phone_number"] . "</td><td>" . $row["payment_id"]
-                    . "</td><td>" . $row["registration_date"] . "</td>
-            <td>" . $row["uname"] . "</td></tr>";
+                echo "<div class='column infoRow'><h4><b>ID</b></h4><h5>" . $row["id"] .
+                    "</h5></div><div class='column infoRow'><h4><b>First Name</b></h4><h5>" . $row["fname"] .
+                    "</h5></div><div class='column infoRow'><h4><b>Last Name</b></h4><h5>" . $row["lname"] .
+                    "</h5></div><div class='column infoRow'><h4><b>Phone Number</b></h4><h5>" . $row["phone_number"] .
+                    "</h5></div><div class='column infoRow'><h4><b>Payment id</b></h4><h5>" . $row["payment_id"] .
+                    "</h5></div><div class='column infoRow'><h4><b>Registration Date</b></h4><h5>" . $row["registration_date"] .
+                    "</h5></div><div class='column infoRow'><h4><b>Username</b></h4><h5>" . $row["uname"] . "</h5></div>";
             }
-            echo "</table>";
+            echo "</div>";
         } else {
             echo "no results";
         }
@@ -107,7 +110,8 @@ if (isset($_POST['submit'])) {
     $lname = $_POST['lname'];
     $phone = $_POST['phone_number'];
     $payment = $_POST['package'];
-    mysqli_query($conn, "UPDATE customers set fname='$fname',lname='$lname',phone_number='$phone',payment_id='$payment' where uname='$username' and passw='$password'");
+    mysqli_query($conn, "UPDATE customers set fname='$fname',lname='$lname',phone_number='$phone'
+                   ,payment_id='$payment' where uname='$username' and passw='$password'");
     header('Location: page.php');
 }
 ?>
