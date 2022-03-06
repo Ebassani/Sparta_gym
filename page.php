@@ -48,7 +48,7 @@ if ($count != 1) {
         <?php
 
         if ($result->num_rows > 0) {
-            echo '<div class="infoCus flex-container">';
+            echo '<div class="infoDisplay flex-container">';
             while ($row = $result->fetch_assoc()) {
                 echo "<div class='column infoRow'><h4><b>ID</b></h4><h5>" . $row["id"] .
                     "</h5></div><div class='column infoRow'><h4><b>First Name</b></h4><h5>" . $row["fname"] .
@@ -71,7 +71,7 @@ if ($count != 1) {
 
         <button class="button1" id="updateButton">Change information</button>
 
-        <div class="changeDataCustomer" id="formChangeCustomer">
+        <div class="formPages" id="formChangeCustomer">
             <h2>Update Data</h2>
             <form method="post" action="">
                 First Name: <br>

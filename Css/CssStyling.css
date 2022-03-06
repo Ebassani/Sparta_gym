@@ -355,7 +355,7 @@ a:hover {
     line-height: 2;
 }
 
-.infoCus{
+.infoDisplay{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -366,8 +366,6 @@ a:hover {
     padding: 1em 1em 1em 1em;
 }
 
-.changeDataCustomer{
+.formPages{
     padding-top: 1em;
-    justify-content: center;
-    align-items: center;
 }

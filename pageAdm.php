@@ -71,7 +71,7 @@ if ($result->num_rows > 0) {
             echo "<div class='infoCus flex-container'><div class='column'><h4><b>ID</b></h4><p>" . $row["id"] .
                 "</p></div><div class='column'><h4><b>First Name</b></h4><p>" . $row["fname"] .
                 "</p></div><div class='column'><h4><b>Last Name</b></h4><p>" . $row["lname"] .
-                "</h5></div><div class='column'><h4><b>Phone Number</b></h4><p>" . $row["phone_number"] .
+                "</p></div><div class='column'><h4><b>Phone Number</b></h4><p>" . $row["phone_number"] .
                 "</p></div><div class='column'><h4><b>Payment id</b></h4><p>" . $row["payment_id"] .
                 "</p></div><div class='column'><h4><b>Registration Date</b></h4><p>" . $row["registration_date"] .
                 "</p></div><div class='column'><h4><b>Username</b></h4><p>" . $row["uname"] .
