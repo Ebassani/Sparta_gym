@@ -75,16 +75,16 @@ if ($count != 1) {
             <h2>Update Data</h2>
             <form method="post" action="">
                 First Name: <br>
-                <input type="text" name="fname" value="<?php echo $row['fname']; ?>">
+                <input class="border" type="text" name="fname" value="<?php echo $row['fname']; ?>">
                 <br>
                 Last Name :<br>
-                <input type="text" name="lname" value="<?php echo $row['lname']; ?>">
+                <input class="border" type="text" name="lname" value="<?php echo $row['lname']; ?>">
                 <br>
                 Phone Number:<br>
-                <input type="text" name="phone_number" value="<?php echo $row['phone_number']; ?>">
+                <input class="border" type="text" name="phone_number" value="<?php echo $row['phone_number']; ?>">
                 <br>
                 Subscription package:<br>
-                <select name="package">
+                <select class="border" name="package">
                     <option value="<?php $value = $row['payment_id'];
                     echo $value ?>">
                         <?php if ($value == 1) {
@@ -99,7 +99,7 @@ if ($count != 1) {
                     <option value="3"> Yearly package</option>
                 </select>
                 <br>
-                <input type="submit" name="submit" value="Submit">
+                <input class="button1 buttonGray" type="submit" name="submit" value="Submit">
             </form>
         </div>
     </div>

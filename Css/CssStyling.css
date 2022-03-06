@@ -343,8 +343,8 @@ a:hover {
     border-radius: 10px;
     box-shadow: black 2px 2px 2px 2px;
     justify-content: center;
-    max-height: 500px;
-    max-width: 800px;
+    max-height: 800px;
+    max-width: 1000px;
     flex-grow: 1;
 }
 
@@ -359,8 +359,15 @@ a:hover {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    border: 1px black;
 }
 
 .infoRow{
     padding: 1em 1em 1em 1em;
+}
+
+.changeDataCustomer{
+    padding-top: 1em;
+    justify-content: center;
+    align-items: center;
 }
