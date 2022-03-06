@@ -17,27 +17,27 @@ $id = $_POST['id'];
         <input name="id" type="hidden" value="<?php echo $row['id']; ?>">
         First Name: <br>
         <label>
-            <input type="text" name="fname" value="<?php echo $row['fname']; ?>">
+            <input class="border" type="text" name="fname" value="<?php echo $row['fname']; ?>">
         </label>
         <br>
         Last Name :<br>
         <label>
-            <input type="text" name="lname" value="<?php echo $row['lname']; ?>">
+            <input class="border" type="text" name="lname" value="<?php echo $row['lname']; ?>">
         </label>
         <br>
         Phone Number:<br>
         <label>
-            <input type="text" name="phone_number" value="<?php echo $row['phone_number']; ?>">
+            <input class="border" type="text" name="phone_number" value="<?php echo $row['phone_number']; ?>">
         </label>
         <br>
         Password:<br>
         <label>
-            <input type="text" name="password" value="<?php echo $row['passw']; ?>">
+            <input class="border" type="text" name="password" value="<?php echo $row['passw']; ?>">
         </label>
         <br>
         Subscription package:<br>
         <label>
-            <select name="package">
+            <select class="border" name="package">
                 <option value="<?php $value = $row['payment_id'];
                 echo $value ?>">
                     <?php if ($value == 1) {
@@ -53,9 +53,9 @@ $id = $_POST['id'];
             </select>
         </label>
         <br>
-        <input type="submit" name="submit" value="Submit">
-        <button type="button" id="cancelButton" onclick="cancelPopUp()" class="button">Cancel</button>
-        <button id="deleteButton" formaction="deleteCustomer.php">Delete</button>
+        <input class="button1 buttonGray" type="submit" name="submit" value="Submit">
+        <button type="button" id="cancelButton" onclick="cancelPopUp()" class="button1 buttonGray">Cancel</button>
+        <button class="button1 buttonGray" id="deleteButton" formaction="deleteCustomer.php">Delete</button>
     </form>
 </div>
 

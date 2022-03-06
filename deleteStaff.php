@@ -5,5 +5,5 @@ include "db.php";
  */
 $id = $_POST['id'];
 
-mysqli_query($conn,"DELETE FROM customers where id='$id'");
+mysqli_query($conn,"DELETE FROM staff where id='$id'");
 header("Location: pageAdm.php");
