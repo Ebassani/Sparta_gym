@@ -1,51 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SpartaGym login</title>
-
-    <link rel="stylesheet" href="Css/project1.css">
-    <link rel="stylesheet" href="Css/CssStyling.css">
-</head>
-<body>
-<?php
-include "header.php";
-?>
-<div class="loginBody">
-    <div class="loginDiv">
-        <form class="login" id="login" method="post">
-            <label for="unameCus">Username:</label><br>
-            <input type="text" id="unameCus" name="unameCus"><br>
-            <label for="passw">Password:</label><br>
-            <input type="password" id="passw" name="passw" ><br>
-            <input type="submit" value="Submit">
-        </form>
-        <button id="loginSwitch">Click to Join as a staff member</button>
-    </div>
-</div>
-<script>
-    let switchForm = true;
-    document.getElementById("loginSwitch").onclick = function () {
-        newForm()
-    };
-
-    function newForm() {
-        if (switchForm) {
-            document.getElementById("loginSwitch").innerHTML = "Click to Join as a customer";
-            document.getElementById("login").innerHTML = '<form class="login" id="login" method="post"><label for="workId">Work Id:</label><br><input type="number" id="workId" name="workId"><br><label for="passw">Password:</label><br><input type="password" id="passw" name="passw"><br><input type="submit" value="Submit"></form>';
-        } else {
-            document.getElementById("loginSwitch").innerHTML = "Click to Join as a staff member";
-            document.getElementById("login").innerHTML = '<form class="login" id="login" method="post"><label for="uname">Username:</label><br><input type="text" id="unameCus" name="unameCus"><br><label for="passw">Password:</label><br><input type="password" id="passw" name="passw" ><br><input type="submit" value="Submit"></form>';
-        }
-        switchForm = !switchForm;
-    }
-
-</script>
-</body>
-</html>
-
 <?php
 include "db.php";
 /**
@@ -67,8 +19,6 @@ if (isset($_POST['unameCus'])) {
         $_SESSION['passw'] = $password;
         header("location:page.php");
         exit();
-    }else {
-        echo "Password or username wrong, please try again.";
     }
 }
 
@@ -93,9 +43,64 @@ if (isset($_POST['workId'])) {
         }
         exit();
 
-    }else {
-        echo "Password or work Id wrong, please try again.";
     }
 }
 $conn->close();
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpartaGym login</title>
+
+    <link rel="stylesheet" href="Css/project1.css">
+    <link rel="stylesheet" href="Css/CssStyling.css">
+</head>
+
+<body class="loginBody">
+<?php
+include "header.php";
+?>
+<div class="login1">
+    <div class="loginDiv"  id="loginDiv">
+        <form class="flex-container" class="login" id="login" method="post">
+            <div class="column">
+                <label for="unameCus"></label>
+                <input class="border" placeholder="Username..." type="text" id="unameCus" name="unameCus">
+            </div>
+            <div class="column">
+                <label for="passw"></label>
+                <input class="border" placeholder="Password..." type="password" id="passw" name="passw" >
+            </div>
+            <input class="button1 buttonGray" type="submit" value="Log In">
+        </form>
+    </div>
+</div>
+<button class="button1 buttonBlue" id="loginSwitch">Click to Join as a staff member</button>
+
+<script>
+    let switchForm = true;
+    document.getElementById("loginSwitch").onclick = function () {
+        newForm()
+    };
+
+    function newForm() {
+        if (switchForm) {
+            document.getElementById("loginSwitch").innerHTML = "Click to Join as a customer";
+            document.getElementById("loginDiv").innerHTML = '<form class="flex-container" class="login" id="login" method="post">' +
+                '<div class="column"><label for="workId"></label><input class="border" type="number" placeholder="Word Id..." id="workId" name="workId"></div>' +
+                '<div class="column"><label for="passw"></label><input class="border" type="password" placeholder="Password..." id="passw" name="passw"></div>' +
+                '<input class="button1 buttonGray" type="submit" value="Log In"></form>';
+        } else {
+            document.getElementById("loginSwitch").innerHTML = "Click to Join as a staff member";
+            document.getElementById("loginDiv").innerHTML = '<form class="flex-container" class="login" id="login" method="post"><div class="column"><label for="unameCus"></label><input class="border" placeholder="Username..." type="text" id="unameCus" name="unameCus"></div><div class="column"><label for="passw"></label><input class="border" placeholder="Password..." type="password" id="passw" name="passw" ></div><input class="button1 buttonGray" type="submit" value="Log In"></form>';
+        }
+        switchForm = !switchForm;
+    }
+
+</script>
+</body>
+</html>

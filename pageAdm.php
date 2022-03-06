@@ -15,7 +15,7 @@
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<body>
+<body class="pageAdm">
 <?php
 include "header.php";
 include "db.php";
@@ -40,151 +40,165 @@ if ($count != 1) {
 
 $obj = $result->fetch_object();
 $name = $obj->name;
-echo "<br><h1>Welcome $name</h1><br>";
-
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-    echo '<table class="table"><tr><th>ID</th><th>Name</th><th>Profession</th><th>Salary</th></tr>';
-    while ($row = $result->fetch_assoc()) {
-        echo "<tr><td>" . $row["id"] . "</td><td>" . $row["name"] . "</td> <td>" . $row["profession"]
-            . "</td><td>" . $row["salary"] . "</td></tr>";
-    }
-    echo "</table>";
-} else {
-    echo "no results";
-}
 ?>
-<a href="logOut.php">
-    <button class="pageButton" id="logOutButton">Log Out</button>
-</a>
+<div class="page1" style="margin-top: 10vh; margin-bottom: 10vh">
+    <div class="pageDiv">
+        <?php
+        echo "<h1>Welcome $name</h1>";
 
-<button class="pageButton" id="readCustomersButton">Check customers</button>
-<button class="pageButton" id="readStaff">Check Staff</button>
-<button class="pageButton" id="readMessages">Read Messages</button>
-
-<div id="checkCustomers">
-    <?php
-    $sqlCustomers = "SELECT * FROM customers";
-    $resultCustomers = $conn->query($sqlCustomers);
-    if ($resultCustomers->num_rows > 0) {
-        echo '<table class="table"><tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Phone number</th><th>Package</th>
-            <th>Registration Date</th><th>Username</th><th>Password</th></tr>';
-        while ($row = $resultCustomers->fetch_assoc()) {
-            echo "<tr><td>" . $row["id"] . "</td><td>" . $row["fname"] . "</td> <td>" . $row["lname"]
-                . "</td><td>" . $row["phone_number"] . "</td><td>" . $row["payment_id"]
-                . "</td><td>" . $row["registration_date"] . "</td>
-            <td>" . $row["uname"] . "</td><td>" . $row["passw"] . '</td><td><button class="button" onclick="getCustomerById('. intval($row["id"]) .')">edit</button></td></tr>';
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            echo '<div class="infoDisplay flex-container">';
+            while ($row = $result->fetch_assoc()) {
+                echo "<div class='column infoRow'><h4><b>ID</b></h4><h5>" . $row["id"] .
+                    "</h5></div><div class='column infoRow'><h4><b>Name</b></h4><h5>" . $row["name"] .
+                    "</h5></div><div class='column infoRow'><h4><b>Profession</b></h4><h5>" . $row["profession"] .
+                    "</h5></div><div class='column infoRow'><h4><b>Salary</b></h4><h5>" . $row["salary"] . "</h5></div>";
+            }
+            echo "</div>";
+        } else {
+            echo "no results";
         }
-        echo "</table>";
-    } else {
-        echo "no results";
-    }
-    ?>
-</div>
-<p id="testing"></p>
-<div id="checkStaff">
-    <?php
-    $sqlStaff = "SELECT * FROM staff";
-    $resultStaff = $conn->query($sqlStaff);
-    if ($resultStaff->num_rows > 0) {
-        echo '<table class="table"><tr><th>ID</th><th>Name</th><th>Profession</th><th>Salary</th><th>Password</th></tr>';
-        while ($row = $resultStaff->fetch_assoc()) {
-            echo "<tr><td>" . $row["id"] . "</td><td>" . $row["name"] . "</td> <td>" . $row["profession"]
-                . "</td><td>" . $row["salary"] . "</td><td>" . $row["password"] .
-                '</td><td><button class="button" onclick="getStaffById('. intval($row["id"]) .')">edit</button></td></tr>';
-        }
-        echo "</table>";
-    } else {
-        echo "no results";
-    }
-    ?>
-</div>
+        ?>
+        <a href="logOut.php">
+            <button class="button1 buttonGray" id="logOutButton">Log Out</button>
+        </a>
 
-<div id="messageDisplay">
-    <?php
-    $sql = "SELECT * FROM message";
-    $result = $conn->query($sql);
-    if ($result->num_rows > 0) {
-        echo '<table class="table"><tr><th>Name</th><th>Email</th><th>Message</th></tr>';
-        while ($row = $result->fetch_assoc()) {
-            echo "<tr><td>" . $row["name"] . "</td><td>" . $row["email"] . "</td>
-            <td>". $row["message"] ."</td></tr>";
-        }
-        echo "</table>";
-    } else {
-        echo "no messages";
-    }
-    ?>
-</div>
+        <button class="button1 buttonGray" id="readCustomersButton">Check customers</button>
+        <button class="button1 buttonGray" id="readStaff">Check Staff</button>
+        <button class="button1 buttonGray" id="readMessages">Read Messages</button>
 
-<div id="popUp"></div>
+        <div id="checkCustomers">
+            <?php
+            $sqlCustomers = "SELECT * FROM customers";
+            $resultCustomers = $conn->query($sqlCustomers);
+            if ($resultCustomers->num_rows > 0) {
+                while ($row = $resultCustomers->fetch_assoc()) {
+                    echo "<div class='infoDisplay flex-container'><div class='column infoRow'><h4><b>ID</b></h4><p>" .
+                        $row["id"] .
+                        "</p></div><div class='column infoRow'><h4><b>First Name</b></h4><p>" . $row["fname"] .
+                        "</p></div><div class='column infoRow'><h4><b>Last Name</b></h4><p>" . $row["lname"] .
+                        "</p></div><div class='column infoRow'><h4><b>Phone Number</b></h4><p>" . $row["phone_number"] .
+                        "</p></div><div class='column infoRow'><h4><b>Payment id</b></h4><p>" . $row["payment_id"] .
+                        "</p></div><div class='column infoRow'><h4><b>Registration Date</b></h4><p>" . $row["registration_date"] .
+                        "</p></div><div class='column infoRow'><h4><b>Username</b></h4><p>" . $row["uname"] .
+                        "</p></div><div class='column infoRow'><h4><b>Password</b></h4><p>" . $row["passw"] .
+                        '</p></div><button class="button1 buttonGray" onclick="getCustomerById(' . intval($row["id"])
+                        . ')">edit</button></div>';
+                }
+            } else {
+                echo "no results";
+            }
+            ?>
+        </div>
+        <p id="testing"></p>
+        <div id="checkStaff">
+            <?php
+            $sqlStaff = "SELECT * FROM staff";
+            $resultStaff = $conn->query($sqlStaff);
+            if ($resultStaff->num_rows > 0) {
+
+                while ($row = $resultStaff->fetch_assoc()) {
+                    echo '<div class="infoDisplay flex-container"><div class="column infoRow"><h4><b>ID</b></h4><h5>'
+                        . $row["id"] .
+                        "</h5></div><div class='column infoRow'><h4><b>Name</b></h4><h5>" . $row["name"] .
+                        "</h5></div><div class='column infoRow'><h4><b>Profession</b></h4><h5>" . $row["profession"] .
+                        "</h5></div><div class='column infoRow'><h4><b>Salary</b></h4><h5>" . $row["salary"] .
+                        "</h5></div><div class='column infoRow'><h4><b>Password</b></h4><h5>". $row["password"] .
+                        '</h5></div><button class="button1 buttonGray" onclick="getStaffById(' . intval($row["id"])
+                        . ')">edit</button></div>';
+                }
+            } else {
+                echo "no results";
+            }
+            ?>
+        </div>
+
+        <div id="messageDisplay">
+            <?php
+            $sql = "SELECT * FROM message";
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo '<div class="infoDisplay flex-container">';
+                    echo "<div class='column infoRow'><h4><b>Sender</b></h4><p>" . $row["name"] .
+                        "</p></div><div class='column infoRow'><h4><b>Email</b></h4><p>" . $row["email"] .
+                        "</p></div><div class='column infoRow'><h4><b>Message</b></h4><p>" . $row["message"] . "</p></div>";
+                    echo "</div>";
+                }
+            } else {
+                echo "no messages";
+            }
+            ?>
+        </div>
+        <div class="popUp hidden" id="popUp"></div>
+        <div id="overlay" class="page-overlay hidden"></div>
+    </div>
+</div>
 
 <script type="text/javascript">
-    if (localStorage.getItem("change") === null){
-        localStorage.setItem("change","show")
+    if (localStorage.getItem("change") === null) {
+        localStorage.setItem("change", "show")
     }
-    if (localStorage.getItem("changeMessages") === null){
-        localStorage.setItem("changeMessages","show")
+    if (localStorage.getItem("changeMessages") === null) {
+        localStorage.setItem("changeMessages", "show")
     }
-    if (localStorage.getItem("changeStaff") === null){
-        localStorage.setItem("changeStaff","show")
-    }
-
-    let change=false;
-    if (localStorage.getItem("change")==="show"){
-        change=true;
-    }
-    let changeMessages=false;
-    if (localStorage.getItem("changeMessages")==="show"){
-        changeMessages=true;
-    }
-    let changeStaff=false;
-    if (localStorage.getItem("changeStaff")==="show"){
-        changeStaff=true;
+    if (localStorage.getItem("changeStaff") === null) {
+        localStorage.setItem("changeStaff", "show")
     }
 
+    let change = false;
+    if (localStorage.getItem("change") === "show") {
+        change = true;
+    }
+    let changeMessages = false;
+    if (localStorage.getItem("changeMessages") === "show") {
+        changeMessages = true;
+    }
+    let changeStaff = false;
+    if (localStorage.getItem("changeStaff") === "show") {
+        changeStaff = true;
+    }
 
-    if(!change){
+
+    if (!change) {
         document.getElementById("checkCustomers").style.display = "none";
     }
-    if(!changeMessages){
+    if (!changeMessages) {
         document.getElementById("messageDisplay").style.display = "none";
     }
-    if(!changeStaff){
+    if (!changeStaff) {
         document.getElementById("checkStaff").style.display = "none";
     }
 
     document.getElementById("readCustomersButton").onclick = function () {
-        change=changeDisplay(change,"checkCustomers");
-        if (localStorage.getItem("change")==="show"){
-            localStorage.setItem("change","noShow")
-        }
-        else {
-            localStorage.setItem("change","show")
+        change = changeDisplay(change, "checkCustomers");
+        if (localStorage.getItem("change") === "show") {
+            localStorage.setItem("change", "noShow")
+        } else {
+            localStorage.setItem("change", "show")
         }
     };
 
     document.getElementById("readMessages").onclick = function () {
-        changeMessages=changeDisplay(changeMessages,"messageDisplay");
-        if (localStorage.getItem("changeMessages")==="show"){
-            localStorage.setItem("changeMessages","noShow")
-        }
-        else {
-            localStorage.setItem("changeMessages","show")
+        changeMessages = changeDisplay(changeMessages, "messageDisplay");
+        if (localStorage.getItem("changeMessages") === "show") {
+            localStorage.setItem("changeMessages", "noShow")
+        } else {
+            localStorage.setItem("changeMessages", "show")
         }
     };
 
     document.getElementById("readStaff").onclick = function () {
-        changeStaff=changeDisplay(changeStaff,"checkStaff");
-        if (localStorage.getItem("changeStaff")==="show"){
-            localStorage.setItem("changeStaff","noShow")
-        }
-        else {
-            localStorage.setItem("changeStaff","show")
+        changeStaff = changeDisplay(changeStaff, "checkStaff");
+        if (localStorage.getItem("changeStaff") === "show") {
+            localStorage.setItem("changeStaff", "noShow")
+        } else {
+            localStorage.setItem("changeStaff", "show")
         }
     };
 
-    function changeDisplay(change,container) {
+    function changeDisplay(change, container) {
         change = !change;
         if (change) {
             document.getElementById(container).style.display = "";
@@ -194,30 +208,37 @@ if ($result->num_rows > 0) {
         return change;
     }
 
-    function getStaffById(number){
+    function getStaffById(number) {
         $.ajax({
             type: "POST",
             url: "fetch_staff.php",
             data: {id: number},
             dataType: 'html',
-            success: function(response) { $('#popUp').html(response); }
+            success: function (response) {
+                $('#popUp').html(response);
+            }
         });
         document.getElementById("popUp").classList.remove("hidden");
+        document.getElementById("overlay").classList.remove("hidden");
     }
 
-    function getCustomerById(number){
+    function getCustomerById(number) {
         $.ajax({
             type: "POST",
             url: "fetch_customer.php",
             data: {id: number},
             dataType: 'html',
-            success: function(response) { $('#popUp').html(response); }
+            success: function (response) {
+                $('#popUp').html(response);
+            }
         });
         document.getElementById("popUp").classList.remove("hidden");
+        document.getElementById("overlay").classList.remove("hidden");
     }
 
-    function cancelPopUp(){
+    function cancelPopUp() {
         document.getElementById("popUp").classList.add("hidden");
+        document.getElementById("overlay").classList.add("hidden");
     }
 
 

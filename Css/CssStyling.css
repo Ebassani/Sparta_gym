@@ -12,10 +12,8 @@ img {
 }
 
 .middle_part {
-    background: url("../images/Background_middle_part.jpg");
     font-family: 'Spartan', sans-serif;
-    background-position: center right;
-    background-repeat: no-repeat;
+    background: url("../images/Background_middle_part.jpg") no-repeat center right;
     background-size: cover;
 }
 
@@ -219,19 +217,189 @@ a:hover {
     color: snow;
 }
 
-.loginDiv {
-    margin: 0 auto;
-    background: #1f4161;
+.login1 {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .loginBody {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: url("../images/sven-mieke-MsCgmHuirDo-unsplash.jpg") no-repeat center right;
+    margin: 0;
+    padding: 0;
+    background: url("../images/sven-mieke-MsCgmHuirDo-unsplash.jpg");
     background-size: cover;
+    height: 100vh;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
 }
 
-.hidden{
+.loginDiv {
+    margin: 0 auto;
+    background: #1f4161;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px;
+    justify-content: center;
+    max-height: 500px;
+    max-width: 300px;
+    flex-grow: 1;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    line-height: 2;
+}
+
+.hidden {
     display: none;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.button1 {
+
+    border: 1px solid rgba(27, 31, 35, .15);
+    border-radius: 6px;
+    box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 20px;
+    padding: 6px 16px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    white-space: nowrap;
+    max-width: 500px;
+    max-height: 3em;
+}
+
+.buttonGray:hover {
+    background-color: lightgrey;
+}
+
+.buttonGray{
+    background-color: snow;
+    color: black;
+}
+
+.buttonBlue:hover {
+    background-color: #081d30;
+}
+
+.buttonBlue{
+    color: snow;
+    background-color: #1F4161;
+}
+
+#loginSwitch{
+    margin-right: 0;
+    right: 0;
+}
+
+.border{
+    background: #1f4161;
+    border-left: 0;
+    color: snow;
+    border-right: 0;
+    border-top: 0;
+    font-size: larger;
+    margin-bottom: 1em;
+}
+
+.page1 {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pageBody {
+    margin: 0;
+    padding: 0;
+    background: url("../images/sven-mieke-MsCgmHuirDo-unsplash.jpg");
+    background-size: cover;
+    height: 100vh;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    color: snow;
+}
+
+.pageAdm {
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: snow;
+    background: url("../images/mohamed-fareed-rbSNsoXk-3A-unsplash.jpg") center;
+}
+
+.pageDiv {
+    margin: 0 auto;
+    background: #1f4161;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: black 2px 2px 2px 2px;
+    justify-content: center;
+    max-width: 800px;
+    flex-grow: 1;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    line-height: 2;
+}
+
+.infoDisplay{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 1px black;
+}
+
+.infoRow{
+    padding: 1em 1em 1em 1em;
+}
+
+.formPages{
+    padding-top: 1em;
+}
+
+.popUp{
+    position: absolute;
+    z-index: 20;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    min-height: 50%;
+    background: #1f4161;
+    margin: 0 auto;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: black 2px 2px 2px 2px;
+}
+
+.page-overlay {
+    position: fixed;
+    z-index: 10;
+    background-color: rgba(23, 23, 23, 0.3);
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
 }
