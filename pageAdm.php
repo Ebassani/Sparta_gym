@@ -131,7 +131,8 @@ $name = $obj->name;
             }
             ?>
         </div>
-        <div class="popUp" id="popUp"></div>
+        <div class="popUp hidden" id="popUp"></div>
+        <div id="overlay" class="page-overlay hidden"></div>
     </div>
 </div>
 
@@ -218,6 +219,7 @@ $name = $obj->name;
             }
         });
         document.getElementById("popUp").classList.remove("hidden");
+        document.getElementById("overlay").classList.remove("hidden");
     }
 
     function getCustomerById(number) {
@@ -231,10 +233,12 @@ $name = $obj->name;
             }
         });
         document.getElementById("popUp").classList.remove("hidden");
+        document.getElementById("overlay").classList.remove("hidden");
     }
 
     function cancelPopUp() {
         document.getElementById("popUp").classList.add("hidden");
+        document.getElementById("overlay").classList.add("hidden");
     }
 
 
