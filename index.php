@@ -219,7 +219,7 @@ include "header.php";
                 <label for="message"><b>Message:</b></label><input type="text" id="message" name="message" required>
 
               
-                                                                          <input class="SendCFormButton" type="submit" value="Send form" formaction="contact.php">
+                                                                          <input class="SendCFormButton" type="submit" value="Send form" formaction="createcontact.php">
             </form>
         </div>
     </div>
