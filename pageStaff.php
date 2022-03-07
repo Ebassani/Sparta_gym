@@ -15,7 +15,7 @@
     </style>
 </head>
 
-<body>
+<body class="pageBody">
 <?php
 include "header.php";
 include "db.php";
@@ -36,62 +36,70 @@ if ($count != 1) {
     header("location:login.php");
     exit();
 }
-
-$obj = $result->fetch_object();
-$name = $obj->name;
-echo "<br><h1>Welcome $name</h1><br>";
-
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-    echo '<table class=\"table\"><tr><th>ID</th><th>Name</th><th>Profession</th><th>Salary</th></tr>';
-    while ($row = $result->fetch_assoc()) {
-        echo "<tr><td>" . $row["id"] . "</td><td>" . $row["name"] . "</td> <td>" . $row["profession"]
-            . "</td><td>" . $row["salary"] . "</td></tr>";
-    }
-    echo "</table>";
-} else {
-    echo "no results";
-}
 ?>
-<a href="logOut.php">
-    <button class="pageButton" id="logOutButton">Log Out</button>
-</a>
+<div class="page1">
+    <div class="pageDiv">
+        <?php
+        $obj = $result->fetch_object();
+        $name = $obj->name;
+        echo "<h1>Welcome $name</h1>";
 
-<button class="pageButton" id="updateButton">Change Name</button>
-<button class="pageButton" id="readMessages">Read Messages</button>
-
-<?php
-$result = mysqli_query($conn, "SELECT name FROM staff WHERE id= '$staffId'");
-$row = mysqli_fetch_array($result);
-?>
-<div id="nameChangeStaff">
-    <form method="post" action="">
-        Name:<br><input type="text" name="name" value="<?php echo $row['name']; ?>"><br>
-        <input type="submit" value="Save change">
-    </form>
-</div>
-
-<div id="messageDisplay">
-    <?php
-    $sql = "SELECT * FROM message";
-    $result = $conn->query($sql);
-    if ($result->num_rows > 0) {
-        echo '<table class="table"><tr><th>Name</th><th>Email</th><th>Message</th></tr>';
-        while ($row = $result->fetch_assoc()) {
-            echo "<tr><td>" . $row["name"] . "</td><td>" . $row["email"] . "</td>
-            <td>". $row["message"] ."</td></tr>";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            echo '<div class="infoDisplay flex-container">';
+            while ($row = $result->fetch_assoc()) {
+                echo "<div class='column infoRow'><h4><b>ID</b></h4><h5>" . $row["id"] .
+                    "</h5></div><div class='column infoRow'><h4><b>Name</b></h4><h5>" . $row["name"] .
+                    "</h5></div><div class='column infoRow'><h4><b>Profession</b></h4><h5>" . $row["profession"] .
+                    "</h5></div><div class='column infoRow'><h4><b>Salary</b></h4><h5>" . $row["salary"] . "</h5></div>";
+            }
+            echo "</div>";
+        } else {
+            echo "no results";
         }
-        echo "</table>";
-    } else {
-        echo "no messages";
-    }
-    ?>
+
+        $result = mysqli_query($conn, "SELECT name FROM staff WHERE id= '$staffId'");
+        $row = mysqli_fetch_array($result);
+        ?>
+        <a href="logOut.php">
+            <button class="button1 buttonGray" id="logOutButton">Log Out</button>
+        </a>
+        <button class="button1 buttonGray" id="updateButton">Change Name</button>
+        <button class="button1 buttonGray" id="readMessages">Read Messages</button>
+
+        <div class="formPages" id="nameChangeStaff">
+            <form method="post" action="">
+                Name:<br><input class="border" type="text" name="name" value="<?php echo $row['name']; ?>"><br>
+                <input class="button1 buttonGray" type="submit" value="Save change">
+            </form>
+        </div>
+
+        <div class="formPages" id="messageDisplay">
+            <?php
+            $sql = "SELECT * FROM message";
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo '<div class="infoDisplay flex-container">';
+                    echo "<div class='column infoRow'><h4><b>Sender</b></h4><p>" . $row["name"] .
+                        "</p></div><div class='column infoRow'><h4><b>Email</b></h4><p>" . $row["email"] .
+                        "</p></div><div class='column infoRow'><h4><b>Message</b></h4><p>" . $row["message"] . "</p></div>";
+                    echo "</div>";
+                }
+            } else {
+                echo "no messages";
+            }
+
+            ?>
+        </div>
+    </div>
 </div>
 
 <?php
 if (isset($_POST['name'])) {
     $name = $_POST['name'];
-    mysqli_query($conn, "UPDATE staff set name='$name'");
+    mysqli_query($conn, "UPDATE staff set name='$name' where id='$staffId'");
+    header("Location: pageStaff.php");
 }
 ?>
 
@@ -111,7 +119,7 @@ if (isset($_POST['name'])) {
     function changeDisplay() {
         change = !change;
         if (change) {
-            document.getElementById("nameChangeStaff").style.display = "initial";
+            document.getElementById("nameChangeStaff").style.display = "";
         } else {
             document.getElementById("nameChangeStaff").style.display = "none";
         }
@@ -120,7 +128,7 @@ if (isset($_POST['name'])) {
     function changeDisplayMessages() {
         changeMessages = !changeMessages;
         if (changeMessages) {
-            document.getElementById("messageDisplay").style.display = "initial";
+            document.getElementById("messageDisplay").style.display = "";
         } else {
             document.getElementById("messageDisplay").style.display = "none";
         }

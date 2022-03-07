@@ -16,18 +16,19 @@ $id = $_POST['id'];
     <form method="post" action="update_staff.php">
         <input name="id" style="display: none" value="<?php echo $row['id']; ?>">
         Name: <br>
-        <input type="text" name="nameStaff" value="<?php echo $row['name']; ?>">
+        <input class="border" type="text" name="nameStaff" value="<?php echo $row['name']; ?>">
         <br>
         Profession :<br>
-        <input type="text" name="profession" value="<?php echo $row['profession']; ?>">
+        <input class="border" type="text" name="profession" value="<?php echo $row['profession']; ?>">
         <br>
         Salary:<br>
-        <input type="text" name="salary" value="<?php echo $row['salary']; ?>">
+        <input class="border" type="text" name="salary" value="<?php echo $row['salary']; ?>">
         <br>
         Password:<br>
-        <input type="text" name="password" value="<?php echo $row['password']; ?>">
+        <input class="border" type="text" name="password" value="<?php echo $row['password']; ?>">
         <br>
-        <input type="submit" name="submit" value="Submit">
-        <button type="button" id="cancelButton" onclick="cancelPopUp()" class="button">Cancel</button>
+        <input class="button1 buttonGray" type="submit" name="submit" value="Submit">
+        <button class="button1 buttonGray" type="button" id="cancelButton" onclick="cancelPopUp()">Cancel</button>
+        <button class="button1 buttonGray" id="deleteButton" formaction="deleteStaff.php">Delete</button>
     </form>
 </div>
