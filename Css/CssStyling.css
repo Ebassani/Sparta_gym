@@ -315,6 +315,8 @@ a:hover {
     border-top: 0;
     font-size: larger;
     margin-bottom: 1em;
+    width: 100%;
+    max-width: 500px;
 }
 
 .page1 {
@@ -381,14 +383,16 @@ a:hover {
 }
 
 .popUp{
-    position: absolute;
+    position: fixed;
     z-index: 20;
-    top: 25%;
-    left: 25%;
-    width: 50%;
-    min-height: 50%;
-    background: #1f4161;
+    top: 20%;
+    left: 0;
+    right: 0;
+    bottom: 0;
     margin: 0 auto;
+    width: min(95%, 600px);
+    height: 70vh;
+    background: #1f4161;
     padding: 2em;
     border-radius: 10px;
     box-shadow: black 2px 2px 2px 2px;
@@ -397,7 +401,7 @@ a:hover {
 .page-overlay {
     position: fixed;
     z-index: 10;
-    background-color: rgba(23, 23, 23, 0.3);
+    background-color: rgba(23, 23, 23, 0.7);
     top: 0;
     left: 0;
     height: 100vh;
