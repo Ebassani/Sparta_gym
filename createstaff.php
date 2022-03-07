@@ -4,13 +4,13 @@ $password = $_POST['password'];
 $profession = $_POST['profession'];
 $salary =1000;
 
-if ($profession =="Personal Trainer"){
+if ($profession ==="Personal Trainer"){
     $salary =3000;
 }
-if ($profession =="Receptionist"){
+elseif ($profession ==="Receptionist"){
     $salary =2000;
 }
-if ($profession =="Manager"){
+elseif ($profession ==="Manager"){
     $salary =5000;
 }
 
